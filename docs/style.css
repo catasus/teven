@@ -1,0 +1,24 @@
+:root { --bg:#0e0f12; --fg:#f2f2f0; --dim:#8b8d93; --accent:#e8b86a; --line:#24262c; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html, body { width:100%; height:100%; background:var(--bg); color:var(--fg); overflow:hidden;
+  font-family:"Helvetica Neue", Arial, sans-serif; }
+main { display:flex; height:100vh; padding:6vh 6vw; }
+.left { flex:1; margin-right:6vw; display:flex; flex-direction:column; justify-content:center; }
+.right { flex:1; display:flex; flex-direction:column; justify-content:center; }
+#clock { font-size:22vh; font-weight:200; letter-spacing:-0.02em; line-height:1; }
+#date { font-size:5vh; margin-top:2vh; }
+#date::first-letter, .day h3::first-letter { text-transform:uppercase; }
+#week { font-size:3vh; color:var(--dim); margin-top:1vh; }
+.weather { margin-top:8vh; border-top:1px solid var(--line); padding-top:4vh; }
+#wtemp { font-size:10vh; font-weight:200; color:var(--accent); }
+#wdesc { font-size:3.4vh; color:var(--dim); margin-top:1vh; }
+#wdays { display:flex; margin-top:4vh; font-size:2.8vh; color:var(--dim); }
+#wdays > div { margin-right:3vw; }
+#wdays b { display:block; color:var(--fg); font-weight:400; font-size:3.2vh; }
+h2 { font-size:3vh; font-weight:400; color:var(--dim); letter-spacing:.2em; text-transform:uppercase;
+  margin-bottom:3vh; }
+.day { margin-bottom:3.2vh; }
+.day h3 { font-size:3vh; font-weight:500; color:var(--accent); margin-bottom:1vh; }
+.ev { display:flex; font-size:3vh; padding:.8vh 0; border-bottom:1px solid var(--line); }
+.ev .t { width:9vw; margin-right:2vw; color:var(--dim); flex:none; }
+.empty { color:var(--dim); font-size:3vh; }

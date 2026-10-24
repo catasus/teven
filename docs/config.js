@@ -1,0 +1,10 @@
+// Ändra här. Ingen hemlig information ska ligga i den här filen (repot kan vara publikt).
+window.CONFIG = {
+  city: "Stockholm",
+  lat: 59.33,
+  lon: 18.07,
+  // Hur många dagar framåt kalendern visar
+  daysAhead: 7,
+  // Hur ofta sidan hämtar väder och kalender på nytt (minuter)
+  refreshMinutes: 15,
+};
