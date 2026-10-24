@@ -1,4 +1,69 @@
 {
- "updated": "2026-10-24T15:41:22.094Z",
- "events": []
+ "updated": "2026-10-24T18:15:44.894Z",
+ "events": [
+  {
+   "who": "",
+   "title": "Höstlov",
+   "location": "",
+   "start": "2026-10-24",
+   "end": "2026-11-02",
+   "allDay": true
+  },
+  {
+   "who": "",
+   "title": "Samlarkortfestivalen",
+   "location": "",
+   "start": "2026-10-25T09:00:00.000Z",
+   "end": "2026-10-25T15:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Dinos",
+   "location": "",
+   "start": "2026-10-27T10:30:00.000Z",
+   "end": "2026-10-27T15:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Badminton",
+   "location": "",
+   "start": "2026-10-27T20:00:00.000Z",
+   "end": "2026-10-27T21:45:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Otis till farmor och farfar",
+   "location": "",
+   "start": "2026-10-28T11:00:00.000Z",
+   "end": "2026-10-28T14:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Hugga träd på Långgarn",
+   "location": "",
+   "start": "2026-10-29T20:00:00.000Z",
+   "end": "2026-10-30T22:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "INOMHUSGYMPA OTIS",
+   "location": "",
+   "start": "2026-11-02",
+   "end": "2026-11-03",
+   "allDay": true
+  },
+  {
+   "who": "",
+   "title": "Badminton",
+   "location": "",
+   "start": "2026-11-03T20:00:00.000Z",
+   "end": "2026-11-03T21:45:00.000Z",
+   "allDay": false
+  }
+ ]
 }
