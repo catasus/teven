@@ -28,16 +28,14 @@ Melker|https://portalweb.sportadmin.se/webcal?id=<ditt-id>
 ```
 `webcal://` fungerar också. Passen visas i en egen ruta under kalendern, för de kommande 7 dagarna. Länken från SportAdmin innehåller ett id som fungerar som lösenord, så lägg den bara i secreten.
 
-## 3. Installera appen på TV:n (en gång)
-1. TV:n: öppna **Appar**, tryck `1 2 3 4 5` på fjärrkontrollen och slå på **Developer mode**. Ange datorns IP och starta om TV:n.
-2. Installera [Tizen Studio](https://developer.tizen.org/development/tizen-studio/download) (CLI räcker) och skapa ett Samsung-certifikat i Certificate Manager.
-3. Bygg och installera:
+## 3. Installera appen på TV:n (en gång, från Mac)
+1. **TV:n:** öppna **Appar**, tryck `1 2 3 4 5` på fjärrkontrollen, slå på **Developer mode** och skriv in Macens IP-adress (Systeminställningar → Nätverk). Starta om TV:n.
+2. **Tizen Studio:** ladda ner till Mac från https://developer.tizen.org/development/tizen-studio/download och installera. Öppna **Package Manager** och installera *TV Extensions* under Extension SDK.
+3. **Certifikat:** i Tizen Studio, *Tools → Certificate Manager → +*. Välj **Samsung**, **TV**, logga in med ett Samsung-konto, ange TV:ns DUID (ställs in när den är ansluten) och ge profilen ett namn, till exempel `TevenProfil`.
+4. **Kör skriptet** i Terminal, från repots mapp:
    ```
-   tizen build-web -- tizen
-   tizen package -t wgt -s <din-certifikatprofil> -- tizen/.buildResult
-   sdb connect <TV-ens-IP>
-   tizen install -n Teven.wgt -t <TV-namn från "sdb devices">
+   tools/install-tv.sh <TV-ens IP-adress> TevenProfil
    ```
-4. På TV:n: **Inställningar → Allmänt → Smart-funktioner → Starta senaste appen automatiskt** (namnet varierar mellan modeller). Öppna Teven en gång.
+5. På TV:n: **Inställningar → Allmänt → Smart-funktioner**, leta efter en inställning för att starta senaste appen automatiskt (namnet varierar mellan modeller).
 
-Efter det behövs datorn inte mer. Utvecklarläget kan dock stängas av efter en TV-uppdatering, och då måste steg 1 och 3 göras om.
+Efter det behövs datorn inte mer. Utvecklarläget kan stängas av efter en TV-uppdatering, och då måste steg 1 och 4 göras om.
