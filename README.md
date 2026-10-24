@@ -20,6 +20,14 @@ scripts/   Hämtar din kalender till docs/events.json
 
 Länken ger läsåtkomst till hela kalendern, så lägg den aldrig i en fil i repot.
 
+## 2b. Barnens matcher och träningar
+Skapa ytterligare en secret, `KIDS_ICS_URLS`, med en länk per rad och barnets namn före `|`:
+```
+Otis|https://cal.laget.se/HogalidsIF-Innebandy-P13IB.ics
+Melker|https://portalweb.sportadmin.se/webcal?id=<ditt-id>
+```
+`webcal://` fungerar också. Passen visas i en egen ruta under kalendern, för de kommande 7 dagarna. Länken från SportAdmin innehåller ett id som fungerar som lösenord, så lägg den bara i secreten.
+
 ## 3. Installera appen på TV:n (en gång)
 1. TV:n: öppna **Appar**, tryck `1 2 3 4 5` på fjärrkontrollen och slå på **Developer mode**. Ange datorns IP och starta om TV:n.
 2. Installera [Tizen Studio](https://developer.tizen.org/development/tizen-studio/download) (CLI räcker) och skapa ett Samsung-certifikat i Certificate Manager.

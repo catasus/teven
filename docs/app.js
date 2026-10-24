@@ -84,12 +84,12 @@
       if (!keys.length) { box.innerHTML = '<div class="empty">Inga händelser de närmaste dagarna</div>'; return; }
       var html = "", n = 0;
       keys.forEach(function (k) {
-        if (n >= 6) return;
+        if (n >= 4) return;
         var d = new Date(k + "T12:00:00");
         var label = k === dayKey(now) ? "Idag" : DAYS[d.getDay()] + " " + d.getDate() + " " + MONTHS[d.getMonth()];
         html += '<div class="day"><h3>' + label + "</h3>";
         byDay[k].sort(function (a, b) { return a.start < b.start ? -1 : 1; }).forEach(function (e) {
-          if (n++ >= 6) return;
+          if (n++ >= 4) return;
           var s = new Date(e.start);
           var t = e.allDay ? "Heldag" : pad(s.getHours()) + ":" + pad(s.getMinutes());
           html += '<div class="ev"><span class="t">' + t + "</span><span>" + esc(e.title) + "</span></div>";
@@ -100,9 +100,29 @@
     });
   }
 
+  function kids() {
+    get("kids.json", function (err, data) {
+      var box = $("kids");
+      if (err || !data || !data.events || !data.events.length) {
+        box.innerHTML = '<div class="empty" style="font-size:2.6vh">Inga matcher eller träningar planerade</div>';
+        return;
+      }
+      var now = new Date(), today = dayKey(now), html = "";
+      data.events.slice(0, 6).forEach(function (e) {
+        var s = new Date(e.start);
+        var d = dayKey(s) === today ? "Idag" : DAYS[s.getDay()].slice(0, 3) + " " + s.getDate();
+        var t = e.allDay ? "Heldag" : pad(s.getHours()) + ":" + pad(s.getMinutes());
+        html += '<div class="kid"><span class="d">' + d + '</span><span class="t">' + t + '</span><span class="w">' +
+          esc(e.who) + "</span><span>" + esc(e.title) + "</span>" +
+          (e.location ? '<span class="x">' + esc(e.location) + "</span>" : "") + "</div>";
+      });
+      box.innerHTML = html;
+    });
+  }
+
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
 
   tick(); setInterval(tick, 1000);
-  function refresh() { weather(); calendar(); }
+  function refresh() { weather(); calendar(); kids(); }
   refresh(); setInterval(refresh, C.refreshMinutes * 60000);
 })();

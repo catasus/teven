@@ -1,55 +1,63 @@
-// Hämtar en iCal-länk (Google Calendar "hemlig adress i iCal-format") och skriver docs/events.json
-// med kommande händelser, inklusive återkommande. Länken ligger i miljövariabeln CALENDAR_ICS_URL.
+// Hämtar iCal-länkar och skriver kommande händelser (inkl. återkommande) till en JSON-fil.
+// Användning: node scripts/fetch-calendar.mjs <ENV_VARIABEL> <utfil> [dagar]
+// Variabeln innehåller en länk per rad, gärna med etikett: "Otis|https://..." (webcal:// funkar också).
 import ICAL from "ical.js";
 import { readFileSync, writeFileSync } from "node:fs";
 
-const DAYS_AHEAD = 14;
-const urls = (process.env.CALENDAR_ICS_URL || "").split(/\s+/).filter(Boolean);
-const src = process.env.ICS_FILE; // för test lokalt
-
-async function load() {
-  if (src) return [readFileSync(src, "utf8")];
-  const out = [];
-  for (const u of urls) {
-    const r = await fetch(u);
-    if (!r.ok) throw new Error("Kunde inte hämta kalendern: " + r.status);
-    out.push(await r.text());
-  }
-  return out;
-}
+const [envName, outFile, days] = process.argv.slice(2);
+const DAYS_AHEAD = Number(days) || 14;
+const sources = (process.env[envName] || "")
+  .split(/\r?\n/)
+  .map((l) => l.trim())
+  .filter(Boolean)
+  .map((l) => {
+    const i = l.indexOf("|");
+    const [label, url] = i >= 0 ? [l.slice(0, i).trim(), l.slice(i + 1).trim()] : ["", l];
+    return { label, url: url.replace(/^webcal:\/\//i, "https://") };
+  });
 
 const now = new Date();
 const from = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 const to = new Date(from.getTime() + DAYS_AHEAD * 86400000);
 const events = [];
 
-function add(ev, start, end) {
+async function load(s) {
+  if (process.env.ICS_FILE) return readFileSync(process.env.ICS_FILE, "utf8"); // test lokalt
+  const r = await fetch(s.url);
+  if (!r.ok) throw new Error("Kunde inte hämta kalendern" + (s.label ? " (" + s.label + ")" : "") + ": " + r.status);
+  return r.text();
+}
+
+function add(s, ev, start, end) {
   const allDay = start.isDate;
-  const s = start.toJSDate(), e = end.toJSDate();
-  if (e <= from || s >= to) return;
+  const a = start.toJSDate(), b = end.toJSDate();
+  if (b <= now && !allDay) return;
+  if (b <= from || a >= to) return;
   events.push({
+    who: s.label,
     title: ev.summary || "(utan titel)",
-    start: allDay ? start.toString() : s.toISOString(),
-    end: allDay ? end.toString() : e.toISOString(),
+    location: ev.location || "",
+    start: allDay ? start.toString() : a.toISOString(),
+    end: allDay ? end.toString() : b.toISOString(),
     allDay,
   });
 }
 
-for (const text of await load()) {
-  const comp = new ICAL.Component(ICAL.parse(text));
+for (const s of sources) {
+  const comp = new ICAL.Component(ICAL.parse(await load(s)));
   const vevents = comp.getAllSubcomponents("vevent").map((c) => new ICAL.Event(c));
   for (const ev of vevents) {
     if (ev.isRecurrenceException()) continue;
-    if (!ev.isRecurring()) { add(ev, ev.startDate, ev.endDate); continue; }
+    if (!ev.isRecurring()) { add(s, ev, ev.startDate, ev.endDate); continue; }
     const it = ev.iterator();
     for (let n = it.next(), i = 0; n && i < 2000; n = it.next(), i++) {
       if (n.toJSDate() >= to) break;
       const d = ev.getOccurrenceDetails(n);
-      add(d.item, d.startDate, d.endDate);
+      add(s, d.item, d.startDate, d.endDate);
     }
   }
 }
 
 events.sort((a, b) => (a.start < b.start ? -1 : 1));
-writeFileSync("docs/events.json", JSON.stringify({ updated: now.toISOString(), events }, null, 1));
-console.log(events.length + " händelser");
+writeFileSync(outFile, JSON.stringify({ updated: now.toISOString(), events }, null, 1));
+console.log(outFile + ": " + events.length + " händelser");

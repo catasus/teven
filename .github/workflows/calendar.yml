@@ -13,12 +13,15 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
       - run: npm install
-      - run: node scripts/fetch-calendar.mjs
+      - run: node scripts/fetch-calendar.mjs CALENDAR_ICS_URL docs/events.json 14
         env:
           CALENDAR_ICS_URL: ${{ secrets.CALENDAR_ICS_URL }}
+      - run: node scripts/fetch-calendar.mjs KIDS_ICS_URLS docs/kids.json 7
+        env:
+          KIDS_ICS_URLS: ${{ secrets.KIDS_ICS_URLS }}
       - name: Spara om något ändrats
         run: |
           git config user.name "teven-bot"
           git config user.email "teven-bot@users.noreply.github.com"
-          git add docs/events.json
+          git add docs/events.json docs/kids.json
           git diff --cached --quiet || (git commit -m "Uppdatera kalender" && git push)
