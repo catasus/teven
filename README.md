@@ -28,6 +28,14 @@ Melker|https://portalweb.sportadmin.se/webcal?id=<ditt-id>
 ```
 `webcal://` fungerar också. Passen visas i en egen ruta under kalendern, för de kommande 7 dagarna. Länken från SportAdmin innehåller ett id som fungerar som lösenord, så lägg den bara i secreten.
 
+## 2c. Läxor och prov (InfoMentor)
+Skapa en tredje secret, `HOMEWORK_ICS_URLS`, med InfoMentors kalenderlänk för varje barn:
+```
+Otis|webcals://im2-api.infomentor.se/...
+Melker|webcals://im2-api.infomentor.se/...
+```
+Allt som finns i kalendern (läxor, prov med mera) visas i rutan "Läxor & prov", med de närmaste 14 dagarna och eventuell beskrivning. Länkarna ger tillgång till barnens uppgifter, så lägg dem bara i secreten.
+
 ## 3. Installera appen på TV:n (en gång, från Mac)
 1. **TV:n:** öppna **Appar**, tryck `1 2 3 4 5` på fjärrkontrollen, slå på **Developer mode** och skriv in Macens IP-adress (Systeminställningar → Nätverk). Starta om TV:n.
 2. **Tizen Studio:** ladda ner till Mac från https://developer.tizen.org/development/tizen-studio/download och installera. Öppna **Package Manager** och installera *TV Extensions* under Extension SDK.

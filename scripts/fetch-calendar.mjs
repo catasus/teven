@@ -1,10 +1,11 @@
 // Hämtar iCal-länkar och skriver kommande händelser (inkl. återkommande) till en JSON-fil.
-// Användning: node scripts/fetch-calendar.mjs <ENV_VARIABEL> <utfil> [dagar]
+// Användning: node scripts/fetch-calendar.mjs <ENV_VARIABEL> <utfil> [dagar] [desc]
+// "desc" tar med händelsens beskrivning (används bara för läxor).
 // Variabeln innehåller en länk per rad, gärna med etikett: "Otis|https://..." (webcal:// funkar också).
 import ICAL from "ical.js";
 import { readFileSync, writeFileSync } from "node:fs";
 
-const [envName, outFile, days] = process.argv.slice(2);
+const [envName, outFile, days, withDesc] = process.argv.slice(2);
 const DAYS_AHEAD = Number(days) || 14;
 const sources = (process.env[envName] || "")
   .split(/\r?\n/)
@@ -13,7 +14,7 @@ const sources = (process.env[envName] || "")
   .map((l) => {
     const i = l.indexOf("|");
     const [label, url] = i >= 0 ? [l.slice(0, i).trim(), l.slice(i + 1).trim()] : ["", l];
-    return { label, url: url.replace(/^webcal:\/\//i, "https://") };
+    return { label, url: url.replace(/^webcals?:\/\//i, "https://") };
   });
 
 const now = new Date();
@@ -57,6 +58,9 @@ function add(s, ev, start, end) {
     who: s.label,
     title: ev.summary || "(utan titel)",
     location: ev.location || "",
+    ...(withDesc === "desc" && ev.description
+      ? { description: String(ev.description).replace(/\s+/g, " ").trim().slice(0, 160) }
+      : {}),
     start: allDay ? start.toString() : a.toISOString(),
     end: allDay ? end.toString() : b.toISOString(),
     allDay,

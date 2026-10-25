@@ -84,12 +84,12 @@
       if (!keys.length) { box.innerHTML = '<div class="empty">Inga händelser de närmaste dagarna</div>'; return; }
       var html = "", n = 0;
       keys.forEach(function (k) {
-        if (n >= 4) return;
+        if (n >= 3) return;
         var d = new Date(k + "T12:00:00");
         var label = k === dayKey(now) ? "Idag" : DAYS[d.getDay()] + " " + d.getDate() + " " + MONTHS[d.getMonth()];
         html += '<div class="day"><h3>' + label + "</h3>";
         byDay[k].sort(function (a, b) { return a.start < b.start ? -1 : 1; }).forEach(function (e) {
-          if (n++ >= 4) return;
+          if (n++ >= 3) return;
           var s = new Date(e.start);
           var t = e.allDay ? "Heldag" : pad(s.getHours()) + ":" + pad(s.getMinutes());
           html += '<div class="ev"><span class="t">' + t + "</span><span>" + esc(e.title) + "</span></div>";
@@ -100,21 +100,53 @@
     });
   }
 
+  function evDate(e) { return new Date(e.allDay ? e.start + "T12:00:00" : e.start); }
+  function dayLabel(d) {
+    var t = new Date(), k = dayKey(d);
+    if (k === dayKey(t)) return "Idag";
+    if (k === dayKey(new Date(t.getTime() + 86400000))) return "Imorgon";
+    return DAYS[d.getDay()].slice(0, 3) + " " + d.getDate() + "/" + (d.getMonth() + 1);
+  }
+
   function kids() {
     get("kids.json", function (err, data) {
       var box = $("kids");
       if (err || !data || !data.events || !data.events.length) {
-        box.innerHTML = '<div class="empty" style="font-size:2.6vh">Inga matcher eller träningar planerade</div>';
+        box.innerHTML = '<div class="empty" style="font-size:2.4vh">Inga matcher eller träningar planerade</div>';
         return;
       }
-      var now = new Date(), today = dayKey(now), html = "";
-      data.events.slice(0, 6).forEach(function (e) {
-        var s = new Date(e.start);
-        var d = dayKey(s) === today ? "Idag" : DAYS[s.getDay()].slice(0, 3) + " " + s.getDate();
+      var html = "";
+      data.events.slice(0, 5).forEach(function (e) {
+        var s = evDate(e);
         var t = e.allDay ? "Heldag" : pad(s.getHours()) + ":" + pad(s.getMinutes());
-        html += '<div class="kid"><span class="d">' + d + '</span><span class="t">' + t + '</span><span class="w">' +
-          esc(e.who) + "</span><span>" + esc(e.title) + "</span>" +
-          (e.location ? '<span class="x">' + esc(e.location) + "</span>" : "") + "</div>";
+        html += '<div class="kid"><div class="k1"><span class="d">' + dayLabel(s) + '</span><span class="t">' + t +
+          '</span><span class="w">' + esc(e.who) + '</span></div><div class="k2">' + esc(e.title) +
+          (e.location ? '<span class="x">' + esc(e.location) + "</span>" : "") + "</div></div>";
+      });
+      box.innerHTML = html;
+    });
+  }
+
+  function homework() {
+    get("homework.json", function (err, data) {
+      var box = $("homework");
+      if (err || !data || !data.events || !data.events.length) {
+        box.innerHTML = '<div class="empty" style="font-size:2.4vh">Inga läxor eller prov just nu</div>';
+        return;
+      }
+      var who = [], by = {};
+      data.events.forEach(function (e) {
+        var k = e.who || "";
+        if (!by[k]) { by[k] = []; who.push(k); }
+        by[k].push(e);
+      });
+      var html = "";
+      who.forEach(function (k) {
+        if (k) html += '<div class="hwwho">' + esc(k) + "</div>";
+        by[k].slice(0, 4).forEach(function (e) {
+          html += '<div class="hw"><div class="k1"><span class="d">' + dayLabel(evDate(e)) + "</span><span>" + esc(e.title) +
+            "</span></div>" + (e.description ? '<div class="desc">' + esc(e.description) + "</div>" : "") + "</div>";
+        });
       });
       box.innerHTML = html;
     });
@@ -123,6 +155,6 @@
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
 
   tick(); setInterval(tick, 1000);
-  function refresh() { weather(); calendar(); kids(); }
+  function refresh() { weather(); calendar(); kids(); homework(); }
   refresh(); setInterval(refresh, C.refreshMinutes * 60000);
 })();
