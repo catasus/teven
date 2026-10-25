@@ -52,7 +52,7 @@ h2 { font-size:2.1vh; font-weight:600; color:var(--bord); letter-spacing:.2em; t
 .kname .av { width:9vh; height:9vh; margin:0 0 1vh 0; border-width:.6vh; }
 .leg { font-size:1.4vh; font-weight:400; color:var(--dim); margin-top:auto; line-height:2.4vh; align-self:flex-start; }
 .leg i { display:inline-block; width:1.4vh; height:1.4vh; border-radius:.3vh; margin:0 .5vw 0 0; vertical-align:middle; }
-i.school { background:var(--bord); } i.sport { background:var(--sport); } i.cal { background:var(--other); }
+i.school { background:transparent; border:.25vh dashed var(--bord); } i.sport { background:var(--sport); } i.cal { background:var(--other); }
 .kmain { flex:1; min-width:0; display:flex; flex-direction:column; }
 .kdays { flex:1; display:flex; min-height:0; overflow:hidden; }
 .dcol { flex:1; min-width:0; padding:0 .35vw; border-left:1px solid var(--line); overflow:hidden; }
@@ -63,7 +63,7 @@ i.school { background:var(--bord); } i.sport { background:var(--sport); } i.cal 
 .dcol.today .dh b { color:#fff; }
 .it { font-size:1.65vh; line-height:1.25; margin-bottom:.8vh; padding-left:.35vw; border-left:.55vh solid var(--other);
   word-wrap:normal; }
-.it.school { border-color:var(--bord); font-weight:600; }
+.it.school { border:.3vh dashed var(--bord); border-radius:.9vh; padding:.5vh .45vw; background:rgba(255,255,255,.7); font-weight:600; }
 .it.sport { border-color:var(--sport); }
 .it .tm { color:var(--dim); font-weight:600; }
 .it .loc { color:var(--dim); font-size:1.4vh; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-weight:400; }
@@ -71,7 +71,7 @@ i.school { background:var(--bord); } i.sport { background:var(--sport); } i.cal 
   overflow:hidden; text-overflow:ellipsis; }
 .klater:empty { display:none; }
 .ll { color:#fff; background:var(--bord); border-radius:.6vh; padding:.2vh .5vw; margin-right:.8vw; font-weight:600; }
-.lt { margin-right:1.4vw; }
+.lt { margin-right:1vw; border:.3vh dashed var(--bord); border-radius:.9vh; padding:.2vh .5vw; background:rgba(255,255,255,.7); }
 .lt b { color:var(--bord); }
 
 .left .day { margin-bottom:.9vh; }
