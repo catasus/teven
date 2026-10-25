@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T23:08:51.324Z",
+ "updated": "2026-10-25T01:05:30.782Z",
  "events": [
   {
    "who": "",
@@ -63,6 +63,22 @@
    "location": "",
    "start": "2026-11-03T20:00:00.000Z",
    "end": "2026-11-03T21:45:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "A&V bröllopspresent GameShow",
+   "location": "",
+   "start": "2026-11-07T15:25:00.000Z",
+   "end": "2026-11-07T21:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Middag med ViktorAnnaJockeMirreNiclasEbba",
+   "location": "",
+   "start": "2026-11-07T16:30:00.000Z",
+   "end": "2026-11-07T20:15:00.000Z",
    "allDay": false
   }
  ]
