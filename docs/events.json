@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25T18:55:36.432Z",
+ "updated": "2026-10-25T19:13:57.437Z",
  "events": [
   {
    "who": "",
@@ -11,7 +11,7 @@
   },
   {
    "who": "",
-   "title": "Fritids Melker",
+   "title": "Melker fritids",
    "location": "",
    "start": "2026-10-26",
    "end": "2026-10-27",
@@ -19,7 +19,7 @@
   },
   {
    "who": "",
-   "title": "Dinos",
+   "title": "Melker/Otis Dinos",
    "location": "",
    "start": "2026-10-27T10:30:00.000Z",
    "end": "2026-10-27T15:00:00.000Z",
@@ -27,7 +27,7 @@
   },
   {
    "who": "",
-   "title": "Badminton",
+   "title": "Hector badmin",
    "location": "",
    "start": "2026-10-27T19:00:00.000Z",
    "end": "2026-10-27T20:45:00.000Z",
@@ -51,10 +51,26 @@
   },
   {
    "who": "",
+   "title": "Hammarby - Sirius ",
+   "location": "",
+   "start": "2026-10-29T17:30:00.000Z",
+   "end": "2026-10-29T19:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
    "title": "Hugga träd på Långgarn",
    "location": "",
    "start": "2026-10-29T20:00:00.000Z",
    "end": "2026-10-30T22:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Halloween hos Anton och Maria ",
+   "location": "",
+   "start": "2026-10-31T15:45:00.000Z",
+   "end": "2026-10-31T20:00:00.000Z",
    "allDay": false
   },
   {
@@ -67,7 +83,7 @@
   },
   {
    "who": "",
-   "title": "Badminton",
+   "title": "Hector badmin",
    "location": "",
    "start": "2026-11-03T19:00:00.000Z",
    "end": "2026-11-03T20:45:00.000Z",
