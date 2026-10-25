@@ -92,12 +92,23 @@
           if (n++ >= 3) return;
           var s = new Date(e.start);
           var t = e.allDay ? "Heldag" : pad(s.getHours()) + ":" + pad(s.getMinutes());
-          html += '<div class="ev"><span class="t">' + t + "</span><span>" + esc(e.title) + "</span></div>";
+          html += '<div class="ev"><span class="t">' + t + "</span><span>" + esc(e.title) + "</span>" + kidsIn(e.title) + "</div>";
         });
         html += "</div>";
       });
       box.innerHTML = html;
     });
+  }
+
+  function avatar(who) {
+    var k = String(who || "").toLowerCase();
+    if (C.avatarPhotos && (k === "otis" || k === "melker")) return '<img class="av ' + k + '" src="img/' + k + '.jpg" alt="">';
+    return who ? '<span class="av avl ' + k + '">' + esc(String(who).charAt(0).toUpperCase()) + "</span>" : "";
+  }
+  function kidsIn(text) {
+    var out = "";
+    ["otis", "melker"].forEach(function (k) { if (String(text).toLowerCase().indexOf(k) >= 0) out += avatar(k); });
+    return out;
   }
 
   function evDate(e) { return new Date(e.allDay ? e.start + "T12:00:00" : e.start); }
@@ -119,9 +130,9 @@
       data.events.slice(0, 5).forEach(function (e) {
         var s = evDate(e);
         var t = e.allDay ? "Heldag" : pad(s.getHours()) + ":" + pad(s.getMinutes());
-        html += '<div class="kid"><div class="k1"><span class="d">' + dayLabel(s) + '</span><span class="t">' + t +
-          '</span><span class="w">' + esc(e.who) + '</span></div><div class="k2">' + esc(e.title) +
-          (e.location ? '<span class="x">' + esc(e.location) + "</span>" : "") + "</div></div>";
+        html += '<div class="kid">' + avatar(e.who) + '<div class="kb"><div class="k1"><span class="d">' + dayLabel(s) +
+          '</span><span class="t">' + t + '</span><span class="w">' + esc(e.who) + '</span></div><div class="k2">' + esc(e.title) +
+          (e.location ? '<span class="x">' + esc(e.location) + "</span>" : "") + "</div></div></div>";
       });
       box.innerHTML = html;
     });
@@ -142,7 +153,7 @@
       });
       var html = "";
       who.forEach(function (k) {
-        if (k) html += '<div class="hwwho">' + esc(k) + "</div>";
+        if (k) html += '<div class="hwwho">' + avatar(k) + "<span>" + esc(k) + "</span></div>";
         by[k].slice(0, 4).forEach(function (e) {
           html += '<div class="hw"><div class="k1"><span class="d">' + dayLabel(evDate(e)) + "</span><span>" + esc(e.title) +
             "</span></div>" + (e.description ? '<div class="desc">' + esc(e.description) + "</div>" : "") + "</div>";

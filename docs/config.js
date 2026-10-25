@@ -7,4 +7,6 @@ window.CONFIG = {
   daysAhead: 7,
   // Hur ofta sidan hämtar väder och kalender på nytt (minuter)
   refreshMinutes: 15,
+  // Foton av barnen (docs/img/otis.jpg, melker.jpg). Av som standard eftersom repot är publikt.
+  avatarPhotos: false,
 };
