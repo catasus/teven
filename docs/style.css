@@ -102,3 +102,6 @@ i.school { background:transparent; border:.25vh dashed var(--bord); } i.sport { 
 .dcol.today .gymi { fill:#fff; }
 .leg .gymi { width:1.7vh; height:1.7vh; margin:0 .5vw 0 0; vertical-align:middle; }
 .dh { min-height:3.8vh; }
+.it.foot { border-color:#d9a441; }
+i.foot { background:#d9a441; }
+.night .it.foot { border-color:#e0b155; }

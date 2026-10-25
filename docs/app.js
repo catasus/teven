@@ -196,8 +196,8 @@
   }
 
   // ---- Barnens veckomatris: en liggande ruta per barn, en kolumn per dag ----
-  var K = { cal: { Otis: [], Melker: [] }, sport: [], hw: [] };
-  var TYPE_ORDER = { school: 0, sport: 1, cal: 2 };
+  var K = { cal: { Otis: [], Melker: [] }, sport: [], hw: [], foot: [] };
+  var TYPE_ORDER = { school: 0, sport: 1, foot: 2, cal: 3 };
 
   function nextKey(k) { var d = new Date(k + "T12:00:00"); return dayKey(new Date(d.getTime() + 86400000)); }
   function onDay(e, key) {
@@ -221,6 +221,9 @@
     K.sport.forEach(function (e) {
       if (e.who === name && onDay(e, key)) out.push({ type: "sport", title: sportTitle(e.title), time: clock(e),
         loc: String(e.location || "").replace(/\s*\(.*\)\s*$/, "") });
+    });
+    K.foot.forEach(function (e) {
+      if (e.who === name && onDay(e, key)) out.push({ type: "foot", title: e.title, time: clock(e), loc: e.sub });
     });
     K.cal[name].forEach(function (e) {
       if (onDay(e, key)) out.push({ type: "cal", title: e.title, time: clock(e) });
@@ -264,12 +267,13 @@
   function loadKids() {
     get("kids.json", function (err, data) { K.sport = err || !data ? [] : (data.events || []); drawKids(); });
     get("homework.json", function (err, data) { K.hw = err || !data ? [] : (data.events || []); drawKids(); });
+    get("football.json", function (err, data) { K.foot = err || !data ? [] : (data.events || []); drawKids(); });
   }
 
   function heads() {
     CHILDREN.forEach(function (name) {
       $("head-" + name.toLowerCase()).innerHTML = avatar(name) + "<span>" + name + "</span>" +
-        '<div class="leg"><div><i class="school"></i>Skola</div><div><i class="sport"></i>Sport</div><div><i class="cal"></i>Övrigt</div><div>' + GYM_SVG + 'Gympa</div></div>';
+        '<div class="leg"><div><i class="school"></i>Skola</div><div><i class="sport"></i>Sport</div><div><i class="cal"></i>Övrigt</div><div>' + GYM_SVG + 'Gympa</div>' + (name === "Otis" ? '<div><i class="foot"></i>Fotboll</div>' : "") + '</div>';
     });
   }
 

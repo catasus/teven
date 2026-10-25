@@ -50,3 +50,4 @@ h2.today { color:var(--acc); }
 .it.gym { border-left-color:var(--blue); }
 .it.gym .gi { width:56px; display:flex; align-items:center; }
 .gymi { width:24px; height:24px; fill:var(--acc); }
+.it.foot { border-left-color:#d9a441; }

@@ -56,3 +56,6 @@ Efter en ändring i `docs/` ska `build` bytas i både `docs/index.html` (meta-ta
 
 ## Mobilsida (iPhone)
 `https://catasus.github.io/teven/mobil.html` är en mobilvariant med flikar för Otis, Melker och Keps & Hector. Tryck på ett inlägg för att se hela texten med klickbara länkar. I Safari: Dela → Lägg till på hemskärmen.
+
+## Champions League för Otis
+`scripts/fetch-football.mjs` hämtar kommande matcher från football-data.org och sparar de där båda lagen är storklubbar (listan `BIG` i skriptet, ändra fritt). Skapa ett gratis konto på football-data.org, kopiera nyckeln (API token) och lägg den som GitHub-hemlighet `FOOTBALL_API_KEY`. Vem matcherna visas för styrs av `WHO` i skriptet.

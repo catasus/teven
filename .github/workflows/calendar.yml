@@ -22,9 +22,13 @@ jobs:
       - run: node scripts/fetch-calendar.mjs HOMEWORK_ICS_URLS docs/homework.json 14 desc
         env:
           HOMEWORK_ICS_URLS: ${{ secrets.HOMEWORK_ICS_URLS }}
+      - run: node scripts/fetch-football.mjs
+        continue-on-error: true
+        env:
+          FOOTBALL_API_KEY: ${{ secrets.FOOTBALL_API_KEY }}
       - name: Spara om något ändrats
         run: |
           git config user.name "teven-bot"
           git config user.email "teven-bot@users.noreply.github.com"
-          git add docs/events.json docs/kids.json docs/homework.json
+          git add docs/events.json docs/kids.json docs/homework.json docs/football.json
           git diff --cached --quiet || (git commit -m "Uppdatera kalender" && git pull --rebase -X theirs origin "$GITHUB_REF_NAME" && git push)

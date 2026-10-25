@@ -5,7 +5,7 @@
   var MONTHS = ["januari","februari","mars","april","maj","juni","juli","augusti","september","oktober","november","december"];
   var pad = function (n) { return (n < 10 ? "0" : "") + n; };
   var $ = function (id) { return document.getElementById(id); };
-  var S = { events: [], kids: [], hw: [], updated: "" };
+  var S = { events: [], kids: [], hw: [], foot: [], updated: "" };
   var tab = (location.hash || "#otis").slice(1);
   if (["otis", "melker", "keps"].indexOf(tab) < 0) tab = "otis";
 
@@ -60,7 +60,7 @@
     return !!g && g.indexOf(new Date(key + "T12:00:00").getDay()) >= 0 && isSchoolDay(key);
   }
 
-  var ORDER = { school: 0, sport: 1, cal: 2 };
+  var ORDER = { school: 0, sport: 1, foot: 2, cal: 3 };
   function itemsFor(name, key) {
     var out = [];
     S.hw.forEach(function (e) {
@@ -68,6 +68,9 @@
     });
     S.kids.forEach(function (e) {
       if (e.who === name && onDay(e, key)) out.push({ type: "sport", title: sportTitle(e.title), time: clock(e), loc: String(e.location || "") });
+    });
+    S.foot.forEach(function (e) {
+      if (e.who === name && onDay(e, key)) out.push({ type: "foot", title: e.title, time: clock(e), loc: e.sub });
     });
     S.events.forEach(function (e) {
       if (whoFor(e.title).indexOf(name) >= 0 && onDay(e, key)) out.push({ type: "cal", title: e.title, time: clock(e), loc: e.location, desc: e.description });
@@ -170,8 +173,8 @@
       .catch(function () { return { events: [] }; });
   }
   function load() {
-    Promise.all([j("events.json"), j("kids.json"), j("homework.json")]).then(function (r) {
-      S.events = r[0].events || []; S.kids = r[1].events || []; S.hw = r[2].events || [];
+    Promise.all([j("events.json"), j("kids.json"), j("homework.json"), j("football.json")]).then(function (r) {
+      S.events = r[0].events || []; S.kids = r[1].events || []; S.hw = r[2].events || []; S.foot = r[3].events || [];
       S.updated = [r[0].updated, r[1].updated, r[2].updated].filter(Boolean).sort().pop() || "";
       draw();
     });
