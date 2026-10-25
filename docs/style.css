@@ -67,3 +67,5 @@ h2 { font-size:2.1vh; font-weight:600; color:var(--bord); letter-spacing:.2em; t
 .left .day h3 { font-size:2.1vh; margin-bottom:.3vh; }
 .left .ev { font-size:2.1vh; padding:.4vh 0; }
 .left .av { width:3.6vh; height:3.6vh; }
+.kcol h2 { margin-top:2.4vh; }
+.kcol .khead + h2 { margin-top:0; }

@@ -1,5 +1,6 @@
 (function () {
   var C = window.CONFIG;
+  var CHILDREN = ["Otis", "Melker"];
   var $ = function (id) { return document.getElementById(id); };
   var pad = function (n) { return (n < 10 ? "0" : "") + n; };
   var DAYS = ["söndag","måndag","tisdag","onsdag","torsdag","fredag","lördag"];
@@ -66,35 +67,73 @@
 
   function dayKey(d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
 
+  // Vilka barn en händelse gäller, utifrån titeln: namn, eller "barnen"/"pojkarna" m.fl. betyder båda
+  function whoFor(title) {
+    var t = String(title);
+    if (/\b(barnen|barna|pojkarna|grabbarna|killarna|bröderna|syskonen)\b/i.test(t)) return ["Otis", "Melker"];
+    var out = [];
+    if (/\botis/i.test(t)) out.push("Otis");
+    if (/\bmelker/i.test(t)) out.push("Melker");
+    return out;
+  }
+
   function calendar() {
     get("events.json", function (err, data) {
       var box = $("events");
+      var kidEv = { Otis: [], Melker: [] };
+      var general = [];
+      if (!err && data && data.events) {
+        var now = new Date();
+        var end = new Date(now.getTime() + C.daysAhead * 86400000);
+        data.events.forEach(function (e) {
+          var s = new Date(e.start), f = new Date(e.end || e.start);
+          if (f < now || s > end) return;
+          var w = whoFor(e.title);
+          if (!w.length) { general.push(e); return; }
+          w.forEach(function (name) { kidEv[name].push(e); });
+        });
+      }
+      renderKidCal(kidEv);
       if (err || !data || !data.events) { box.innerHTML = '<div class="empty">Ingen kalender kopplad ännu</div>'; return; }
-      var now = new Date();
-      var end = new Date(now.getTime() + C.daysAhead * 86400000);
       var byDay = {}, keys = [];
-      data.events.forEach(function (e) {
-        var s = new Date(e.start), f = new Date(e.end || e.start);
-        if (f < now || s > end) return;
-        var k = dayKey(s < now && e.allDay ? now : s);
+      general.forEach(function (e) {
+        var s = new Date(e.start);
+        var k = dayKey(s < new Date() && e.allDay ? new Date() : s);
         if (!byDay[k]) { byDay[k] = []; keys.push(k); }
         byDay[k].push(e);
       });
       keys.sort();
       if (!keys.length) { box.innerHTML = '<div class="empty">Inga händelser de närmaste dagarna</div>'; return; }
-      var html = "", n = 0;
+      var html = "", n = 0, today = dayKey(new Date());
       keys.forEach(function (k) {
-        if (n >= 5) return;
+        if (n >= C.calendarRows) return;
         var d = new Date(k + "T12:00:00");
-        var label = k === dayKey(now) ? "Idag" : DAYS[d.getDay()] + " " + d.getDate() + " " + MONTHS[d.getMonth()];
+        var label = k === today ? "Idag" : DAYS[d.getDay()] + " " + d.getDate() + " " + MONTHS[d.getMonth()];
         html += '<div class="day"><h3>' + label + "</h3>";
         byDay[k].sort(function (a, b) { return a.start < b.start ? -1 : 1; }).forEach(function (e) {
-          if (n++ >= 5) return;
+          if (n++ >= C.calendarRows) return;
           var s = new Date(e.start);
           var t = e.allDay ? "Heldag" : pad(s.getHours()) + ":" + pad(s.getMinutes());
-          html += '<div class="ev"><span class="t">' + t + "</span><span>" + esc(e.title) + "</span>" + kidsIn(e.title) + "</div>";
+          html += '<div class="ev"><span class="t">' + t + "</span><span>" + esc(e.title) + "</span></div>";
         });
         html += "</div>";
+      });
+      box.innerHTML = html;
+    });
+  }
+
+  // Barnens egna kalenderposter, överst i deras kolumn
+  function renderKidCal(kidEv) {
+    CHILDREN.forEach(function (name) {
+      var key = name.toLowerCase(), box = $("cal-" + key), head = $("calh-" + key);
+      var list = kidEv[name].slice().sort(function (x, y) { return evDate(x) - evDate(y); }).slice(0, 4);
+      head.style.display = list.length ? "block" : "none";
+      var html = "";
+      list.forEach(function (e) {
+        var s = evDate(e);
+        var t = e.allDay ? "Heldag" : pad(s.getHours()) + ":" + pad(s.getMinutes());
+        html += '<div class="kid"><div class="kb"><div class="k1"><span class="d">' + dayLabel(s) +
+          '</span><span class="t">' + t + '</span></div><div class="k2">' + esc(e.title) + "</div></div></div>";
       });
       box.innerHTML = html;
     });
@@ -105,11 +144,6 @@
     if (C.avatarPhotos && (k === "otis" || k === "melker")) return '<img class="av ' + k + '" src="img/' + k + '.jpg" alt="">';
     return who ? '<span class="av avl ' + k + '">' + esc(String(who).charAt(0).toUpperCase()) + "</span>" : "";
   }
-  function kidsIn(text) {
-    var out = "";
-    ["otis", "melker"].forEach(function (k) { if (String(text).toLowerCase().indexOf(k) >= 0) out += avatar(k); });
-    return out;
-  }
 
   function evDate(e) { return new Date(e.allDay ? e.start + "T12:00:00" : e.start); }
   function dayLabel(d) {
@@ -119,7 +153,6 @@
     return DAYS[d.getDay()].slice(0, 3) + " " + d.getDate() + "/" + (d.getMonth() + 1);
   }
 
-  var CHILDREN = ["Otis", "Melker"];
   function mine(data, name) {
     return (data.events || []).filter(function (e) { return String(e.who).toLowerCase() === name.toLowerCase(); });
   }
