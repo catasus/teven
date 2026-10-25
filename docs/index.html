@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Teven</title>
-  <meta name="build" content="2026-10-25-7">
+  <meta name="build" content="2026-10-25-8">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,25 +20,24 @@
       <h2>Keps &amp; Hector</h2>
       <div id="events"></div>
     </section>
-    <section class="kcol" id="col-otis">
-      <div class="khead" id="head-otis"></div>
-      <h2 id="calh-otis" style="display:none">Kalender</h2>
-      <div id="cal-otis"></div>
-      <h2>Träningar/Matcher</h2>
-      <div id="tr-otis"></div>
-      <h2 class="hwhead">Läxor &amp; prov</h2>
-      <div id="hw-otis"></div>
-    </section>
-    <section class="kcol" id="col-melker">
-      <div class="khead" id="head-melker"></div>
-      <h2 id="calh-melker" style="display:none">Kalender</h2>
-      <div id="cal-melker"></div>
-      <h2>Träningar/Matcher</h2>
-      <div id="tr-melker"></div>
-      <h2 class="hwhead">Läxor &amp; prov</h2>
-      <div id="hw-melker"></div>
-    </section>
+    <div class="right">
+      <section class="kbox" id="box-otis">
+        <div class="kname" id="head-otis"></div>
+        <div class="kmain">
+          <div class="kdays" id="days-otis"></div>
+          <div class="klater" id="later-otis"></div>
+        </div>
+      </section>
+      <section class="kbox" id="box-melker">
+        <div class="kname" id="head-melker"></div>
+        <div class="kmain">
+          <div class="kdays" id="days-melker"></div>
+          <div class="klater" id="later-melker"></div>
+        </div>
+      </section>
+    </div>
   </main>
+  <div id="dim"></div>
   <script src="config.js"></script>
   <script src="app.js"></script>
 </body>

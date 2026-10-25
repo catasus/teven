@@ -94,7 +94,7 @@
           w.forEach(function (name) { kidEv[name].push(e); });
         });
       }
-      renderKidCal(kidEv);
+      K.cal = kidEv; drawKids();
       calState = { ok: !(err || !data || !data.events), general: general };
       drawGeneral();
     });
@@ -144,23 +144,6 @@
     }
   }
 
-  // Barnens egna kalenderposter, överst i deras kolumn
-  function renderKidCal(kidEv) {
-    CHILDREN.forEach(function (name) {
-      var key = name.toLowerCase(), box = $("cal-" + key), head = $("calh-" + key);
-      var list = kidEv[name].slice().sort(function (x, y) { return evDate(x) - evDate(y); }).slice(0, 4);
-      head.style.display = list.length ? "block" : "none";
-      var html = "";
-      list.forEach(function (e) {
-        var s = evDate(e);
-        var t = e.allDay ? "Heldag" : pad(s.getHours()) + ":" + pad(s.getMinutes());
-        html += '<div class="kid"><div class="kb"><div class="k1"><span class="d">' + dayLabel(s) +
-          '</span><span class="t">' + t + '</span></div><div class="k2">' + esc(e.title) + "</div></div>" + peopleIn(e.title) + "</div>";
-      });
-      box.innerHTML = html;
-    });
-  }
-
   var PHOTOS = { otis: 1, melker: 1, keps: 1, hector: 1 };
   function avatar(who) {
     var k = String(who || "").toLowerCase();
@@ -183,50 +166,80 @@
     return DAYS[d.getDay()].slice(0, 3) + " " + d.getDate() + "/" + (d.getMonth() + 1);
   }
 
-  function mine(data, name) {
-    return (data.events || []).filter(function (e) { return String(e.who).toLowerCase() === name.toLowerCase(); });
-  }
-  function emptyMsg(t) { return '<div class="empty" style="font-size:2vh">' + t + "</div>"; }
+  // ---- Barnens veckomatris: en liggande ruta per barn, en kolumn per dag ----
+  var K = { cal: { Otis: [], Melker: [] }, sport: [], hw: [] };
+  var TYPE_ORDER = { school: 0, sport: 1, cal: 2 };
 
-  function kids() {
-    get("kids.json", function (err, data) {
-      CHILDREN.forEach(function (name) {
-        var box = $("tr-" + name.toLowerCase());
-        var list = err || !data ? [] : mine(data, name);
-        if (!list.length) { box.innerHTML = emptyMsg("Inget planerat"); return; }
-        var html = "";
-        list.slice(0, 5).forEach(function (e) {
-          var s = evDate(e);
-          var t = e.allDay ? "Heldag" : pad(s.getHours()) + ":" + pad(s.getMinutes());
-          html += '<div class="kid"><div class="kb"><div class="k1"><span class="d">' + dayLabel(s) +
-            '</span><span class="t">' + t + '</span></div><div class="k2">' + esc(e.title) +
-            (e.location ? '<span class="x">' + esc(e.location) + "</span>" : "") + "</div></div></div>";
-        });
-        box.innerHTML = html;
-      });
+  function nextKey(k) { var d = new Date(k + "T12:00:00"); return dayKey(new Date(d.getTime() + 86400000)); }
+  function onDay(e, key) {
+    if (e.allDay) {
+      var end = e.end && e.end > e.start ? e.end : nextKey(e.start);
+      return e.start <= key && key < end;
+    }
+    return dayKey(new Date(e.start)) === key;
+  }
+  function clock(e) { if (e.allDay) return ""; var s = new Date(e.start); return pad(s.getHours()) + ":" + pad(s.getMinutes()); }
+  function sportTitle(t) {
+    if (/träning/i.test(t) && /(P13|innebandy|Högalids)/i.test(t)) return "Innebandyträning";
+    return String(t).replace(/\s*[-–]\s*Högalids IF.*$/i, "");
+  }
+
+  function itemsFor(name, key) {
+    var out = [];
+    K.hw.forEach(function (e) {
+      if (e.who === name && onDay(e, key)) out.push({ type: "school", title: e.title, time: "" });
+    });
+    K.sport.forEach(function (e) {
+      if (e.who === name && onDay(e, key)) out.push({ type: "sport", title: sportTitle(e.title), time: clock(e),
+        loc: String(e.location || "").replace(/\s*\(.*\)\s*$/, "") });
+    });
+    K.cal[name].forEach(function (e) {
+      if (onDay(e, key)) out.push({ type: "cal", title: e.title, time: clock(e) });
+    });
+    return out.sort(function (a, b) {
+      return (TYPE_ORDER[a.type] - TYPE_ORDER[b.type]) || (a.time < b.time ? -1 : a.time > b.time ? 1 : 0);
     });
   }
 
-  function homework() {
-    get("homework.json", function (err, data) {
-      CHILDREN.forEach(function (name) {
-        var box = $("hw-" + name.toLowerCase());
-        var list = err || !data ? [] : mine(data, name);
-        if (!list.length) { box.innerHTML = emptyMsg("Inga läxor eller prov just nu"); return; }
-        var html = "";
-        list.sort(function (x, y) { return evDate(x) - evDate(y); }).slice(0, 5).forEach(function (e) {
-          html += '<div class="kid"><div class="kb"><div class="k1"><span class="d">' + dayLabel(evDate(e)) +
-            "</span><span>" + esc(e.title) + "</span></div>" +
-            (e.description ? '<div class="desc">' + esc(e.description) + "</div>" : "") + "</div></div>";
+  function drawKids() {
+    var t0 = new Date(), base = new Date(t0.getFullYear(), t0.getMonth(), t0.getDate());
+    var days = [];
+    for (var i = 0; i < 7; i++) days.push(new Date(base.getFullYear(), base.getMonth(), base.getDate() + i));
+    var lastKey = dayKey(days[6]);
+    CHILDREN.forEach(function (name) {
+      var html = "";
+      days.forEach(function (d, i) {
+        var key = dayKey(d);
+        html += '<div class="dcol' + (i === 0 ? " today" : "") + '"><div class="dh"><b>' +
+          (i === 0 ? "Idag" : DAYS[d.getDay()].slice(0, 3)) + "</b> " + d.getDate() + "/" + (d.getMonth() + 1) + "</div>";
+        itemsFor(name, key).forEach(function (it) {
+          html += '<div class="it ' + it.type + '">' + (it.time ? '<span class="tm">' + it.time + "</span> " : "") +
+            esc(it.title) + (it.loc ? '<div class="loc">' + esc(it.loc) + "</div>" : "") + "</div>";
         });
-        box.innerHTML = html;
+        html += "</div>";
       });
+      $("days-" + name.toLowerCase()).innerHTML = html;
+      // Läxor och prov längre fram än veckan
+      var later = K.hw.filter(function (e) { return e.who === name && dayKey(evDate(e)) > lastKey; })
+        .sort(function (x, y) { return evDate(x) - evDate(y); }).slice(0, 3);
+      var lh = "";
+      later.forEach(function (e) {
+        var d = evDate(e);
+        lh += '<span class="lt"><b>' + DAYS[d.getDay()].slice(0, 3) + " " + d.getDate() + "/" + (d.getMonth() + 1) + "</b> " + esc(e.title) + "</span>";
+      });
+      $("later-" + name.toLowerCase()).innerHTML = lh ? '<span class="ll">Senare</span>' + lh : "";
     });
+  }
+
+  function loadKids() {
+    get("kids.json", function (err, data) { K.sport = err || !data ? [] : (data.events || []); drawKids(); });
+    get("homework.json", function (err, data) { K.hw = err || !data ? [] : (data.events || []); drawKids(); });
   }
 
   function heads() {
     CHILDREN.forEach(function (name) {
-      $("head-" + name.toLowerCase()).innerHTML = avatar(name) + "<span>" + name + "</span>";
+      $("head-" + name.toLowerCase()).innerHTML = avatar(name) + "<span>" + name + "</span>" +
+        '<div class="leg"><div><i class="school"></i>Skola</div><div><i class="sport"></i>Sport</div><div><i class="cal"></i>Övrigt</div></div>';
     });
   }
 
@@ -234,6 +247,7 @@
 
   tick(); setInterval(tick, 1000);
   heads();
+  if (C.dim) $("dim").style.opacity = C.dim;
   window.addEventListener("load", function () { drawGeneral(); });
   // Laddar om sidan om en nyare version finns ute (bumpa build i index.html och build.json vid ändringar)
   function checkBuild() {
@@ -243,6 +257,6 @@
       if (!err && d && d.build && d.build !== m.content) location.reload();
     });
   }
-  function refresh() { checkBuild(); weather(); calendar(); kids(); homework(); }
+  function refresh() { checkBuild(); weather(); calendar(); loadKids(); }
   refresh(); setInterval(refresh, C.refreshMinutes * 60000);
 })();
