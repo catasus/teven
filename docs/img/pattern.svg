@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <!-- Eget mönster: genomskinliga band som överlappar och bildar en rutig väv. Går att lägga i rader utan skarvar. -->
+  <g>
+    <!-- lodräta band -->
+    <rect x="14"  y="0" width="54" height="240" fill="#6f87a8" fill-opacity=".55"/>
+    <rect x="96"  y="0" width="22" height="240" fill="#c9cbd2" fill-opacity=".75"/>
+    <rect x="146" y="0" width="38" height="240" fill="#efe7d3" fill-opacity=".70"/>
+    <rect x="204" y="0" width="12" height="240" fill="#9fb5d2" fill-opacity=".65"/>
+    <!-- vågräta band -->
+    <rect x="0" y="22"  width="240" height="30" fill="#c9cbd2" fill-opacity=".65"/>
+    <rect x="0" y="84"  width="240" height="58" fill="#6f87a8" fill-opacity=".45"/>
+    <rect x="0" y="166" width="240" height="14" fill="#efe7d3" fill-opacity=".80"/>
+    <rect x="0" y="200" width="240" height="26" fill="#d98a97" fill-opacity=".38"/>
+  </g>
+  <!-- bourgogne markeringar där banden korsar -->
+  <rect x="96"  y="84" width="22" height="58" fill="#7a1a1f" fill-opacity=".85"/>
+  <rect x="204" y="166" width="12" height="14" fill="#7a1a1f" fill-opacity=".9"/>
+  <rect x="14"  y="22" width="54" height="30" fill="#7a1a1f" fill-opacity=".18"/>
+</svg>

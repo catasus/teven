@@ -86,3 +86,12 @@ i.school { background:transparent; border:.25vh dashed var(--bord); } i.sport { 
   var(--bg); }
 .night section { box-shadow:none; }
 .night .avl.otis, .night .avl.keps { color:#15141a; }
+
+/* Mönster bakom klockan och vädret */
+.hero { position:relative; border-radius:1.6vh; padding:2vh .8vw 1.2vh; margin-bottom:2.2vh;
+  background:linear-gradient(rgba(255,255,255,.74), rgba(255,255,255,.74)), url(img/pattern.svg); background-size:auto, 21vh; }
+.hero .weather { margin-bottom:0; border-top-color:var(--bord); }
+.night .hero { background:linear-gradient(rgba(21,20,26,.86), rgba(21,20,26,.86)), url(img/pattern.svg); background-size:auto, 21vh; }
+.night .hero .weather { border-top-color:var(--bord); }
+.hero #date { font-size:2.7vh; white-space:nowrap; }
+.hero #wdays > div { margin-right:.9vw; }
