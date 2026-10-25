@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25T18:08:23.709Z",
+ "updated": "2026-10-25T18:55:36.432Z",
  "events": [
   {
    "who": "",
@@ -7,6 +7,14 @@
    "location": "",
    "start": "2026-10-24",
    "end": "2026-11-02",
+   "allDay": true
+  },
+  {
+   "who": "",
+   "title": "Fritids Melker",
+   "location": "",
+   "start": "2026-10-26",
+   "end": "2026-10-27",
    "allDay": true
   },
   {
@@ -24,6 +32,14 @@
    "start": "2026-10-27T19:00:00.000Z",
    "end": "2026-10-27T20:45:00.000Z",
    "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Melker fritids",
+   "location": "",
+   "start": "2026-10-28",
+   "end": "2026-10-30",
+   "allDay": true
   },
   {
    "who": "",
