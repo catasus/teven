@@ -114,7 +114,7 @@
           if (n++ >= C.calendarRows) return;
           var s = new Date(e.start);
           var t = e.allDay ? "Heldag" : pad(s.getHours()) + ":" + pad(s.getMinutes());
-          html += '<div class="ev"><span class="t">' + t + "</span><span>" + esc(e.title) + "</span></div>";
+          html += '<div class="ev"><span class="t">' + t + "</span><span>" + esc(e.title) + "</span>" + peopleIn(e.title) + "</div>";
         });
         html += "</div>";
       });
@@ -133,16 +133,24 @@
         var s = evDate(e);
         var t = e.allDay ? "Heldag" : pad(s.getHours()) + ":" + pad(s.getMinutes());
         html += '<div class="kid"><div class="kb"><div class="k1"><span class="d">' + dayLabel(s) +
-          '</span><span class="t">' + t + '</span></div><div class="k2">' + esc(e.title) + "</div></div></div>";
+          '</span><span class="t">' + t + '</span></div><div class="k2">' + esc(e.title) + "</div></div>" + peopleIn(e.title) + "</div>";
       });
       box.innerHTML = html;
     });
   }
 
+  var PHOTOS = { otis: 1, melker: 1, keps: 1, hector: 1 };
   function avatar(who) {
     var k = String(who || "").toLowerCase();
-    if (C.avatarPhotos && (k === "otis" || k === "melker")) return '<img class="av ' + k + '" src="img/' + k + '.jpg" alt="">';
+    if (C.avatarPhotos && PHOTOS[k]) return '<img class="av ' + k + '" src="img/' + k + '.jpg" alt="">';
     return who ? '<span class="av avl ' + k + '">' + esc(String(who).charAt(0).toUpperCase()) + "</span>" : "";
+  }
+  // Vuxna i kalenderns titlar: Keps/Jessica och Hector får en liten bild vid raden
+  function peopleIn(title) {
+    var t = String(title), out = "";
+    if (/\b(keps|jessica)\b/i.test(t)) out += avatar("Keps");
+    if (/\bhector\b/i.test(t)) out += avatar("Hector");
+    return out;
   }
 
   function evDate(e) { return new Date(e.allDay ? e.start + "T12:00:00" : e.start); }

@@ -69,3 +69,10 @@ h2 { font-size:2.1vh; font-weight:600; color:var(--bord); letter-spacing:.2em; t
 .left .av { width:3.6vh; height:3.6vh; }
 .kcol h2 { margin-top:2.4vh; }
 .kcol .khead + h2 { margin-top:0; }
+.av.keps { border-color:var(--blue); }
+.av.hector { border-color:var(--bord); }
+.avl.keps { background:var(--blue); }
+.avl.hector { background:var(--bord); color:#fff; }
+.ev .av { margin-left:auto; }
+.ev .av + .av { margin-left:.4vw; }
+.kid .av:last-child { margin-left:.8vw; }
