@@ -1,6 +1,6 @@
 // Hämtar iCal-länkar och skriver kommande händelser (inkl. återkommande) till en JSON-fil.
 // Användning: node scripts/fetch-calendar.mjs <ENV_VARIABEL> <utfil> [dagar] [desc]
-// "desc" tar med händelsens beskrivning (används bara för läxor).
+// "desc" tar med händelsens hela beskrivning och länk (används bara för läxor).
 // Variabeln innehåller en länk per rad, gärna med etikett: "Otis|https://..." (webcal:// funkar också).
 import ICAL from "ical.js";
 import { readFileSync, writeFileSync } from "node:fs";
@@ -59,7 +59,10 @@ function add(s, ev, start, end) {
     title: ev.summary || "(utan titel)",
     location: ev.location || "",
     ...(withDesc === "desc" && ev.description
-      ? { description: String(ev.description).replace(/\s+/g, " ").trim().slice(0, 160) }
+      ? { description: String(ev.description).replace(/\r\n?/g, "\n").replace(/[ \t]+/g, " ").replace(/\n{3,}/g, "\n\n").trim().slice(0, 4000) }
+      : {}),
+    ...(withDesc === "desc" && ev.component.getFirstPropertyValue("url")
+      ? { url: String(ev.component.getFirstPropertyValue("url")) }
       : {}),
     start: allDay ? start.toString() : a.toISOString(),
     end: allDay ? end.toString() : b.toISOString(),

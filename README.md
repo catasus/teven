@@ -53,3 +53,6 @@ Efter en ändring i `docs/` ska `build` bytas i både `docs/index.html` (meta-ta
 
 ## Bild till Art Mode
 `tools/upload-art.py` laddar upp en bild i full skärm utan ram. Se instruktionerna överst i filen. Kör det på en dator på samma wifi som TV:n.
+
+## Mobilsida (iPhone)
+`https://catasus.github.io/teven/mobil.html` är en mobilvariant med flikar för Otis, Melker och Keps & Hector. Tryck på ett inlägg för att se hela texten med klickbara länkar. I Safari: Dela → Lägg till på hemskärmen.
