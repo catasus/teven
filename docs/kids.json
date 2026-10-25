@@ -1,28 +1,28 @@
 {
- "updated": "2026-10-25T14:59:10.528Z",
+ "updated": "2026-10-25T17:37:31.705Z",
  "events": [
   {
    "who": "Otis",
    "title": "Träning - Högalids IF P13 IB",
    "location": "Liljeholmshallen 1 (Lilla hallen)",
-   "start": "2026-10-26T16:45:00.000Z",
-   "end": "2026-10-26T17:45:00.000Z",
+   "start": "2026-10-26T15:45:00.000Z",
+   "end": "2026-10-26T16:45:00.000Z",
    "allDay": false
   },
   {
    "who": "Otis",
    "title": "Träning - Högalids IF P13 IB",
    "location": "Liljeholmshallen 1 (Hall 1)",
-   "start": "2026-10-26T18:00:00.000Z",
-   "end": "2026-10-26T19:00:00.000Z",
+   "start": "2026-10-26T17:00:00.000Z",
+   "end": "2026-10-26T18:00:00.000Z",
    "allDay": false
   },
   {
    "who": "Otis",
    "title": "Träning - Högalids IF P13 IB",
    "location": "Tellusborgshallen (Hall 2)",
-   "start": "2026-10-28T18:00:00.000Z",
-   "end": "2026-10-28T19:30:00.000Z",
+   "start": "2026-10-28T17:00:00.000Z",
+   "end": "2026-10-28T18:30:00.000Z",
    "allDay": false
   }
  ]
