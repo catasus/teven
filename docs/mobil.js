@@ -60,7 +60,7 @@
     return !!g && g.indexOf(new Date(key + "T12:00:00").getDay()) >= 0 && isSchoolDay(key);
   }
 
-  var ORDER = { school: 0, sport: 1, foot: 2, cal: 3 };
+  var ORDER = { school: 0, sport: 1, cal: 2, foot: 3 }; // fotboll alltid längst ned
   function itemsFor(name, key) {
     var out = [];
     S.hw.forEach(function (e) {
@@ -70,7 +70,7 @@
       if (e.who === name && onDay(e, key)) out.push({ type: "sport", title: sportTitle(e.title), time: clock(e), loc: String(e.location || "") });
     });
     S.foot.forEach(function (e) {
-      if (e.who === name && onDay(e, key)) out.push({ type: "foot", title: e.title, time: clock(e), loc: e.sub });
+      if (e.who === name && onDay(e, key)) out.push({ type: "foot", title: e.title, time: clock(e), loc: e.sub || e.location });
     });
     S.events.forEach(function (e) {
       if (whoFor(e.title).indexOf(name) >= 0 && onDay(e, key)) out.push({ type: "cal", title: e.title, time: clock(e), loc: e.location, desc: e.description });
@@ -173,8 +173,9 @@
       .catch(function () { return { events: [] }; });
   }
   function load() {
-    Promise.all([j("events.json"), j("kids.json"), j("homework.json"), j("football.json")]).then(function (r) {
-      S.events = r[0].events || []; S.kids = r[1].events || []; S.hw = r[2].events || []; S.foot = r[3].events || [];
+    Promise.all([j("events.json"), j("kids.json"), j("homework.json"), j("football.json"), j("football-ics.json")]).then(function (r) {
+      S.events = r[0].events || []; S.kids = r[1].events || []; S.hw = r[2].events || [];
+      S.foot = (r[3].events || []).concat(r[4].events || []);
       S.updated = [r[0].updated, r[1].updated, r[2].updated].filter(Boolean).sort().pop() || "";
       draw();
     });

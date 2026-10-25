@@ -59,3 +59,6 @@ Efter en ändring i `docs/` ska `build` bytas i både `docs/index.html` (meta-ta
 
 ## Champions League för Otis
 `scripts/fetch-football.mjs` hämtar kommande matcher från football-data.org och sparar de där båda lagen är storklubbar (listan `BIG` i skriptet, ändra fritt). Skapa ett gratis konto på football-data.org, kopiera nyckeln (API token) och lägg den som GitHub-hemlighet `FOOTBALL_API_KEY`. Vem matcherna visas för styrs av `WHO` i skriptet.
+
+## Hammarby, landslaget och annan fotboll
+Lägg en hemlighet `FOOTBALL_ICS_URLS` med en kalenderlänk (ICS) per rad, i formen `Otis|länk`. Länkar hittar du på FotMob: öppna lagets sida, välj "Sync to calendar" och kopiera ICS-länken. Fotboll visas alltid längst ned i varje dag.
