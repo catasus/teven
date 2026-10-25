@@ -95,3 +95,10 @@ i.school { background:transparent; border:.25vh dashed var(--bord); } i.sport { 
 .night .hero .weather { border-top-color:var(--bord); }
 .hero #date { font-size:2.7vh; white-space:nowrap; }
 .hero #wdays > div { margin-right:.9vw; }
+
+/* Gympakläder */
+.dh { display:flex; align-items:center; justify-content:space-between; }
+.gymi { width:2.7vh; height:2.7vh; fill:var(--bord); flex:none; margin-left:.3vw; }
+.dcol.today .gymi { fill:#fff; }
+.leg .gymi { width:1.7vh; height:1.7vh; margin:0 .5vw 0 0; vertical-align:middle; }
+.dh { min-height:3.8vh; }

@@ -46,3 +46,7 @@ h2.today { color:var(--acc); }
 .tab .pair img, .tab .pair .ph { width:34px; height:34px; margin-bottom:0; }
 .tab .pair > :first-child { margin-right:-8px; position:relative; z-index:1; }
 .tab.on .pair img, .tab.on .pair .ph { border-color:var(--bord); }
+
+.it.gym { border-left-color:var(--blue); }
+.it.gym .gi { width:56px; display:flex; align-items:center; }
+.gymi { width:24px; height:24px; fill:var(--acc); }

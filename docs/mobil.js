@@ -44,6 +44,22 @@
     return out;
   }
 
+  // ---- Gympakläder: gäller bara på skoldagar (se config.js) ----
+  var GYM_SVG = '<svg class="gymi" viewBox="0 0 24 24" role="img" aria-label="Gympakläder"><path d="M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3c-.5 1.5-2 2.5-4 2.5S8.5 4.5 8 3z"/></svg>';
+  function inRange(key, r) { return key >= r[0] && key <= r[1]; }
+  function isSchoolDay(key) {
+    var terms = C.schoolTerms || [], off = C.noSchool || [], inTerm = false, i;
+    for (i = 0; i < terms.length; i++) if (inRange(key, terms[i])) inTerm = true;
+    if (!inTerm) return false;
+    for (i = 0; i < off.length; i++) if (inRange(key, off[i])) return false;
+    var wd = new Date(key + "T12:00:00").getDay();
+    return wd >= 1 && wd <= 5;
+  }
+  function isGymDay(name, key) {
+    var g = (C.gym || {})[name];
+    return !!g && g.indexOf(new Date(key + "T12:00:00").getDay()) >= 0 && isSchoolDay(key);
+  }
+
   var ORDER = { school: 0, sport: 1, cal: 2 };
   function itemsFor(name, key) {
     var out = [];
@@ -83,10 +99,11 @@
   function childView(name) {
     var html = "", ds = days(7);
     ds.forEach(function (d, i) {
-      var items = itemsFor(name, dayKey(d));
-      if (!items.length && i > 0) return;
+      var key = dayKey(d), items = itemsFor(name, key), gym = isGymDay(name, key);
+      if (!items.length && !gym && i > 0) return;
       html += '<h2' + (i === 0 ? ' class="today"' : "") + ">" + dayLabel(d, i) + "</h2>";
-      html += items.length ? items.map(itemHtml).join("") : '<div class="empty">Inget planerat</div>';
+      if (gym) html += '<div class="it gym"><div class="row"><span class="gi">' + GYM_SVG + '</span><span class="ti">Gympakläder</span></div></div>';
+      html += items.length ? items.map(itemHtml).join("") : (gym ? "" : '<div class="empty">Inget planerat</div>');
     });
     var last = dayKey(ds[6]);
     var later = S.hw.filter(function (e) { return e.who === name && dayKey(evDate(e)) > last; })

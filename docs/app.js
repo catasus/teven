@@ -81,6 +81,22 @@
 
   function dayKey(d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
 
+  // ---- Gympakläder: gäller bara på skoldagar (se config.js) ----
+  var GYM_SVG = '<svg class="gymi" viewBox="0 0 24 24" role="img" aria-label="Gympakläder"><path d="M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3c-.5 1.5-2 2.5-4 2.5S8.5 4.5 8 3z"/></svg>';
+  function inRange(key, r) { return key >= r[0] && key <= r[1]; }
+  function isSchoolDay(key) {
+    var terms = C.schoolTerms || [], off = C.noSchool || [], inTerm = false, i;
+    for (i = 0; i < terms.length; i++) if (inRange(key, terms[i])) inTerm = true;
+    if (!inTerm) return false;
+    for (i = 0; i < off.length; i++) if (inRange(key, off[i])) return false;
+    var wd = new Date(key + "T12:00:00").getDay();
+    return wd >= 1 && wd <= 5;
+  }
+  function isGymDay(name, key) {
+    var g = (C.gym || {})[name];
+    return !!g && g.indexOf(new Date(key + "T12:00:00").getDay()) >= 0 && isSchoolDay(key);
+  }
+
   // Vilka barn en händelse gäller, utifrån titeln: namn, eller "barnen"/"pojkarna" m.fl. betyder båda
   function whoFor(title) {
     var t = String(title);
@@ -223,8 +239,9 @@
       var html = "";
       days.forEach(function (d, i) {
         var key = dayKey(d);
-        html += '<div class="dcol' + (i === 0 ? " today" : "") + '"><div class="dh"><b>' +
-          (i === 0 ? "Idag" : DAYS[d.getDay()].slice(0, 3)) + "</b> " + d.getDate() + "/" + (d.getMonth() + 1) + "</div>";
+        html += '<div class="dcol' + (i === 0 ? " today" : "") + '"><div class="dh"><span><b>' +
+          (i === 0 ? "Idag" : DAYS[d.getDay()].slice(0, 3)) + "</b> " + d.getDate() + "/" + (d.getMonth() + 1) + "</span>" +
+          (isGymDay(name, key) ? GYM_SVG : "") + "</div>";
         itemsFor(name, key).forEach(function (it) {
           html += '<div class="it ' + it.type + '">' + (it.time ? '<span class="tm">' + it.time + "</span> " : "") +
             esc(it.title) + (it.loc ? '<div class="loc">' + esc(it.loc) + "</div>" : "") + "</div>";
@@ -252,7 +269,7 @@
   function heads() {
     CHILDREN.forEach(function (name) {
       $("head-" + name.toLowerCase()).innerHTML = avatar(name) + "<span>" + name + "</span>" +
-        '<div class="leg"><div><i class="school"></i>Skola</div><div><i class="sport"></i>Sport</div><div><i class="cal"></i>Övrigt</div></div>';
+        '<div class="leg"><div><i class="school"></i>Skola</div><div><i class="sport"></i>Sport</div><div><i class="cal"></i>Övrigt</div><div>' + GYM_SVG + 'Gympa</div></div>';
     });
   }
 
