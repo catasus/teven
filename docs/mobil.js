@@ -124,7 +124,9 @@
     $("tabs").innerHTML = defs.map(function (t) {
       var img = C.avatarPhotos && PHOTOS[t[0]] ? '<img src="img/' + t[0] + '.jpg" alt="">'
         : '<span class="ph">' + esc(t[1].charAt(0)) + "</span>";
-      if (t[0] === "keps") img = C.avatarPhotos ? '<img src="img/keps.jpg" alt="">' : '<span class="ph">K</span>';
+      if (t[0] === "keps") img = '<span class="pair">' + (C.avatarPhotos
+        ? '<img src="img/keps.jpg" alt=""><img src="img/hector.jpg" alt="">'
+        : '<span class="ph">K</span><span class="ph">H</span>') + "</span>";
       return '<button class="tab' + (tab === t[0] ? " on" : "") + '" data-tab="' + t[0] + '">' + img + t[1] + "</button>";
     }).join("");
   }

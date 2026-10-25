@@ -42,3 +42,7 @@ h2.today { color:var(--acc); }
 .tab img, .tab .ph { width:34px; height:34px; border-radius:50%; object-fit:cover; border:2px solid transparent; margin-bottom:2px; }
 .tab .ph { background:var(--blue); display:flex; align-items:center; justify-content:center; font-weight:700; color:#fff; }
 .tab.on img, .tab.on .ph { border-color:var(--bord); }
+.tab .pair { display:flex; margin-bottom:2px; }
+.tab .pair img, .tab .pair .ph { width:34px; height:34px; margin-bottom:0; }
+.tab .pair > :first-child { margin-right:-8px; position:relative; z-index:1; }
+.tab.on .pair img, .tab.on .pair .ph { border-color:var(--bord); }
