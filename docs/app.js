@@ -84,12 +84,12 @@
       if (!keys.length) { box.innerHTML = '<div class="empty">Inga händelser de närmaste dagarna</div>'; return; }
       var html = "", n = 0;
       keys.forEach(function (k) {
-        if (n >= 3) return;
+        if (n >= 6) return;
         var d = new Date(k + "T12:00:00");
         var label = k === dayKey(now) ? "Idag" : DAYS[d.getDay()] + " " + d.getDate() + " " + MONTHS[d.getMonth()];
         html += '<div class="day"><h3>' + label + "</h3>";
         byDay[k].sort(function (a, b) { return a.start < b.start ? -1 : 1; }).forEach(function (e) {
-          if (n++ >= 3) return;
+          if (n++ >= 6) return;
           var s = new Date(e.start);
           var t = e.allDay ? "Heldag" : pad(s.getHours()) + ":" + pad(s.getMinutes());
           html += '<div class="ev"><span class="t">' + t + "</span><span>" + esc(e.title) + "</span>" + kidsIn(e.title) + "</div>";
@@ -123,7 +123,7 @@
     get("kids.json", function (err, data) {
       var box = $("kids");
       if (err || !data || !data.events || !data.events.length) {
-        box.innerHTML = '<div class="empty" style="font-size:2.4vh">Inga matcher eller träningar planerade</div>';
+        box.innerHTML = '<div class="empty" style="font-size:2vh">Inga matcher eller träningar planerade</div>';
         return;
       }
       var html = "";
@@ -142,22 +142,14 @@
     get("homework.json", function (err, data) {
       var box = $("homework");
       if (err || !data || !data.events || !data.events.length) {
-        box.innerHTML = '<div class="empty" style="font-size:2.4vh">Inga läxor eller prov just nu</div>';
+        box.innerHTML = '<div class="empty" style="font-size:2vh">Inga läxor eller prov just nu</div>';
         return;
       }
-      var who = [], by = {};
-      data.events.forEach(function (e) {
-        var k = e.who || "";
-        if (!by[k]) { by[k] = []; who.push(k); }
-        by[k].push(e);
-      });
       var html = "";
-      who.forEach(function (k) {
-        if (k) html += '<div class="hwwho">' + avatar(k) + "<span>" + esc(k) + "</span></div>";
-        by[k].slice(0, 4).forEach(function (e) {
-          html += '<div class="hw"><div class="k1"><span class="d">' + dayLabel(evDate(e)) + "</span><span>" + esc(e.title) +
-            "</span></div>" + (e.description ? '<div class="desc">' + esc(e.description) + "</div>" : "") + "</div>";
-        });
+      data.events.slice().sort(function (x, y) { return evDate(x) - evDate(y); }).slice(0, 6).forEach(function (e) {
+        html += '<div class="kid">' + avatar(e.who) + '<div class="kb"><div class="k1"><span class="d">' + dayLabel(evDate(e)) +
+          '</span><span>' + esc(e.title) + '</span></div>' +
+          (e.description ? '<div class="desc">' + esc(e.description) + "</div>" : "") + "</div></div>";
       });
       box.innerHTML = html;
     });
