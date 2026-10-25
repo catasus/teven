@@ -50,3 +50,6 @@ Efter det behövs datorn inte mer. Utvecklarläget kan stängas av efter en TV-u
 
 ## Uppdatera sidan
 Efter en ändring i `docs/` ska `build` bytas i både `docs/index.html` (meta-taggen) och `docs/build.json`. TV:n kollar var 15:e minut och laddar då om sidan själv, så du slipper starta om appen.
+
+## Bild till Art Mode
+`tools/upload-art.py` laddar upp en bild i full skärm utan ram. Se instruktionerna överst i filen. Kör det på en dator på samma wifi som TV:n.

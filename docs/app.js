@@ -62,6 +62,7 @@
           Math.round(w.daily.temperature_2m_min[i]) + "°<br>" + wmo(w.daily.weather_code[i]) + "</div>";
       }
       $("wdays").innerHTML = html;
+      drawGeneral();
     });
   }
 
@@ -94,32 +95,53 @@
         });
       }
       renderKidCal(kidEv);
-      if (err || !data || !data.events) { box.innerHTML = '<div class="empty">Ingen kalender kopplad ännu</div>'; return; }
-      var byDay = {}, keys = [];
-      general.forEach(function (e) {
-        var s = new Date(e.start);
-        var k = dayKey(s < new Date() && e.allDay ? new Date() : s);
-        if (!byDay[k]) { byDay[k] = []; keys.push(k); }
-        byDay[k].push(e);
-      });
-      keys.sort();
-      if (!keys.length) { box.innerHTML = '<div class="empty">Inga händelser de närmaste dagarna</div>'; return; }
-      var html = "", n = 0, today = dayKey(new Date());
-      keys.forEach(function (k) {
-        if (n >= C.calendarRows) return;
-        var d = new Date(k + "T12:00:00");
-        var label = k === today ? "Idag" : DAYS[d.getDay()] + " " + d.getDate() + " " + MONTHS[d.getMonth()];
-        html += '<div class="day"><h3>' + label + "</h3>";
-        byDay[k].sort(function (a, b) { return a.start < b.start ? -1 : 1; }).forEach(function (e) {
-          if (n++ >= C.calendarRows) return;
-          var s = new Date(e.start);
-          var t = e.allDay ? "Heldag" : pad(s.getHours()) + ":" + pad(s.getMinutes());
-          html += '<div class="ev"><span class="t">' + t + "</span><span>" + esc(e.title) + "</span>" + peopleIn(e.title) + "</div>";
-        });
-        html += "</div>";
-      });
-      box.innerHTML = html;
+      calState = { ok: !(err || !data || !data.events), general: general };
+      drawGeneral();
     });
+  }
+
+  // Ritas om när vädret kommit, eftersom det ändrar hur mycket plats kalendern har
+  var calState = null;
+  function drawGeneral() {
+    var box = $("events");
+    if (!calState) return;
+    if (!calState.ok) { box.innerHTML = '<div class="empty">Ingen kalender kopplad ännu</div>'; return; }
+    var byDay = {}, keys = [];
+    calState.general.forEach(function (e) {
+      var s = new Date(e.start);
+      var k = dayKey(s < new Date() && e.allDay ? new Date() : s);
+      if (!byDay[k]) { byDay[k] = []; keys.push(k); }
+      byDay[k].push(e);
+    });
+    keys.sort();
+    if (!keys.length) { box.innerHTML = '<div class="empty">Inga händelser de närmaste dagarna</div>'; return; }
+    var html = "", n = 0, today = dayKey(new Date());
+    keys.forEach(function (k) {
+      if (n >= C.calendarRows) return;
+      var d = new Date(k + "T12:00:00");
+      var label = k === today ? "Idag" : DAYS[d.getDay()] + " " + d.getDate() + " " + MONTHS[d.getMonth()];
+      html += '<div class="day"><h3>' + label + "</h3>";
+      byDay[k].sort(function (a, b) { return a.start < b.start ? -1 : 1; }).forEach(function (e) {
+        if (n++ >= C.calendarRows) return;
+        var s = new Date(e.start);
+        var t = e.allDay ? "Heldag" : pad(s.getHours()) + ":" + pad(s.getMinutes());
+        html += '<div class="ev"><span class="t">' + t + "</span><span>" + esc(e.title) + "</span>" + peopleIn(e.title) + "</div>";
+      });
+      html += "</div>";
+    });
+    box.innerHTML = html;
+    fit(box, box.parentNode);
+  }
+
+  // Tar bort sista raderna tills kolumnen ryms, så skärmen fylls utan att något klipps
+  function fit(box, container) {
+    while (container.scrollHeight > container.clientHeight + 1) {
+      var evs = box.querySelectorAll(".ev");
+      if (!evs.length) break;
+      var last = evs[evs.length - 1], day = last.parentNode;
+      day.removeChild(last);
+      if (!day.querySelector(".ev")) box.removeChild(day);
+    }
   }
 
   // Barnens egna kalenderposter, överst i deras kolumn
@@ -212,6 +234,7 @@
 
   tick(); setInterval(tick, 1000);
   heads();
+  window.addEventListener("load", function () { drawGeneral(); });
   // Laddar om sidan om en nyare version finns ute (bumpa build i index.html och build.json vid ändringar)
   function checkBuild() {
     var m = document.querySelector('meta[name="build"]');
