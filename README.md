@@ -47,3 +47,6 @@ Allt som finns i kalendern (läxor, prov med mera) visas i rutan "Läxor & prov"
 5. På TV:n: **Inställningar → Allmänt → Smart-funktioner**, leta efter en inställning för att starta senaste appen automatiskt (namnet varierar mellan modeller).
 
 Efter det behövs datorn inte mer. Utvecklarläget kan stängas av efter en TV-uppdatering, och då måste steg 1 och 4 göras om.
+
+## Uppdatera sidan
+Efter en ändring i `docs/` ska `build` bytas i både `docs/index.html` (meta-taggen) och `docs/build.json`. TV:n kollar var 15:e minut och laddar då om sidan själv, så du slipper starta om appen.

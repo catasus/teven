@@ -171,6 +171,14 @@
 
   tick(); setInterval(tick, 1000);
   heads();
-  function refresh() { weather(); calendar(); kids(); homework(); }
+  // Laddar om sidan om en nyare version finns ute (bumpa build i index.html och build.json vid ändringar)
+  function checkBuild() {
+    var m = document.querySelector('meta[name="build"]');
+    if (!m) return;
+    get("build.json", function (err, d) {
+      if (!err && d && d.build && d.build !== m.content) location.reload();
+    });
+  }
+  function refresh() { checkBuild(); weather(); calendar(); kids(); homework(); }
   refresh(); setInterval(refresh, C.refreshMinutes * 60000);
 })();
