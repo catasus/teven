@@ -28,9 +28,29 @@ async function load(s) {
   return r.text();
 }
 
+const TZ = "Europe/Stockholm";
+const fmt = new Intl.DateTimeFormat("en-US", {
+  timeZone: TZ, hourCycle: "h23",
+  year: "numeric", month: "numeric", day: "numeric", hour: "numeric", minute: "numeric", second: "numeric",
+});
+function tzOffset(ms) { // ms som UTC -> offset (ms) för svensk tid just då
+  const p = Object.fromEntries(fmt.formatToParts(new Date(ms)).map((x) => [x.type, x.value]));
+  return Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute, p.second) - ms;
+}
+// Tid utan tidszon ("flytande") betyder klockslag på väggen, alltså svensk tid
+function floatingToDate(t) {
+  const guess = Date.UTC(t.year, t.month - 1, t.day, t.hour, t.minute, t.second);
+  let ms = guess - tzOffset(guess);
+  ms = guess - tzOffset(ms);
+  return new Date(ms);
+}
+function toDate(t) {
+  return t.zone === ICAL.Timezone.localTimezone ? floatingToDate(t) : t.toJSDate();
+}
+
 function add(s, ev, start, end) {
   const allDay = start.isDate;
-  const a = start.toJSDate(), b = end.toJSDate();
+  const a = toDate(start), b = toDate(end);
   if (b <= now && !allDay) return;
   if (b <= from || a >= to) return;
   events.push({
@@ -45,6 +65,8 @@ function add(s, ev, start, end) {
 
 for (const s of sources) {
   const comp = new ICAL.Component(ICAL.parse(await load(s)));
+  // Utan detta vet ical.js inte vad TZID=Europe/Stockholm betyder
+  for (const vtz of comp.getAllSubcomponents("vtimezone")) ICAL.TimezoneService.register(vtz);
   const vevents = comp.getAllSubcomponents("vevent").map((c) => new ICAL.Event(c));
   for (const ev of vevents) {
     if (ev.isRecurrenceException()) continue;
