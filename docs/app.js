@@ -14,7 +14,20 @@
     return Math.ceil(((t - y0) / 86400000 + 1) / 7);
   }
 
+  // Dag/kväll: ?theme=night eller ?theme=day i adressen tvingar fram ett läge (för test)
+  var forced = /[?&]theme=(night|day)/.exec(location.search);
+  var isNight = null;
+  function applyTheme() {
+    var h = new Date().getHours();
+    var night = forced ? forced[1] === "night" : (C.nightFrom > C.nightTo ? (h >= C.nightFrom || h < C.nightTo) : (h >= C.nightFrom && h < C.nightTo));
+    if (night === isNight) return;
+    isNight = night;
+    document.documentElement.className = night ? "night" : "";
+    $("dim").style.opacity = night ? (C.dimNight || 0) : (C.dim || 0);
+  }
+
   function tick() {
+    applyTheme();
     var d = new Date();
     $("clock").textContent = pad(d.getHours()) + ":" + pad(d.getMinutes());
     $("date").textContent = DAYS[d.getDay()] + " " + d.getDate() + " " + MONTHS[d.getMonth()];
@@ -247,7 +260,6 @@
 
   tick(); setInterval(tick, 1000);
   heads();
-  if (C.dim) $("dim").style.opacity = C.dim;
   window.addEventListener("load", function () { drawGeneral(); });
   // Laddar om sidan om en nyare version finns ute (bumpa build i index.html och build.json vid ändringar)
   function checkBuild() {

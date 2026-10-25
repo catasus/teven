@@ -11,6 +11,10 @@ window.CONFIG = {
   calendarRows: 30,
   // Foton av barnen (docs/img/otis.jpg, melker.jpg). På med ägarens godkännande, trots att repot är publikt.
   avatarPhotos: true,
-  // Dämpar skärmen: 0 = av, 0.15 = något mörkare (TV:ns egen ljusstyrka ställs i TV:ns inställningar)
-  dim: 0.12,
+  // Dämpar skärmen med ett mörkt lager: 0 = av. dim gäller dagtid, dimNight kvällstid
+  dim: 0.25,
+  dimNight: 0.1,
+  // Kvällsläge (mörk variant) från och med klockan nightFrom till klockan nightTo
+  nightFrom: 19,
+  nightTo: 7,
 };

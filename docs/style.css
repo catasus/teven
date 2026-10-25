@@ -1,6 +1,6 @@
 /* Färger hämtade från ugglan: bourgogne, ljusblått och ljusgrått */
 :root { --bg:#e3e5ea; --card:rgba(255,255,255,.6); --fg:#22202a; --dim:#6a6d78;
-  --bord:#7a1a1f; --blue:#9fc3e0; --blue2:#d3e3f1; --line:#d4d8df; --sport:#6aa6d4; --other:#a2a5b0; }
+  --bord:#7a1a1f; --blue:#9fc3e0; --blue2:#d3e3f1; --line:#d4d8df; --sport:#6aa6d4; --other:#a2a5b0; --chip:#7a1a1f; --hwbg:rgba(255,255,255,.7); }
 * { box-sizing:border-box; margin:0; padding:0; }
 html, body { width:100%; height:100%; background:var(--bg); color:var(--fg); overflow:hidden;
   font-family:"Helvetica Neue", Arial, sans-serif; }
@@ -42,7 +42,7 @@ h2 { font-size:2.1vh; font-weight:600; color:var(--bord); letter-spacing:.2em; t
 .av.melker, .av.hector { border-color:var(--bord); }
 .avl { display:inline-flex; align-items:center; justify-content:center; font-size:2.2vh; color:var(--bord); font-weight:600; }
 .avl.otis, .avl.keps { background:var(--blue); }
-.avl.melker, .avl.hector { background:var(--bord); color:#fff; }
+.avl.melker, .avl.hector { background:var(--chip); color:#fff; }
 
 /* Barnens rutor */
 .kbox { flex:1; flex-direction:row; padding:2vh 1vw; margin-bottom:1.2vh; }
@@ -59,19 +59,30 @@ i.school { background:transparent; border:.25vh dashed var(--bord); } i.sport { 
 .dcol:first-child { border-left:0; }
 .dh { font-size:1.8vh; color:var(--dim); margin-bottom:1vh; white-space:nowrap; }
 .dh b { color:var(--bord); font-weight:700; font-size:2vh; }
-.dcol.today .dh { background:var(--bord); color:#fff; border-radius:.8vh; padding:.4vh .5vw; }
+.dcol.today .dh { background:var(--chip); color:#fff; border-radius:.8vh; padding:.4vh .5vw; }
 .dcol.today .dh b { color:#fff; }
 .it { font-size:1.65vh; line-height:1.25; margin-bottom:.8vh; padding-left:.35vw; border-left:.55vh solid var(--other);
   word-wrap:normal; }
-.it.school { border:.3vh dashed var(--bord); border-radius:.9vh; padding:.5vh .45vw; background:rgba(255,255,255,.7); font-weight:600; }
+.it.school { border:.3vh dashed var(--bord); border-radius:.9vh; padding:.5vh .45vw; background:var(--hwbg); font-weight:600; }
 .it.sport { border-color:var(--sport); }
 .it .tm { color:var(--dim); font-weight:600; }
 .it .loc { color:var(--dim); font-size:1.4vh; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-weight:400; }
 .klater { line-height:1.6; font-size:1.6vh; border-top:1px solid var(--line); padding-top:.8vh; margin-top:.4vh; white-space:nowrap;
   overflow:hidden; text-overflow:ellipsis; }
 .klater:empty { display:none; }
-.ll { color:#fff; background:var(--bord); border-radius:.6vh; padding:.2vh .5vw; margin-right:.8vw; font-weight:600; }
-.lt { margin-right:1vw; border:.3vh dashed var(--bord); border-radius:.9vh; padding:.2vh .5vw; background:rgba(255,255,255,.7); }
+.ll { color:#fff; background:var(--chip); border-radius:.6vh; padding:.2vh .5vw; margin-right:.8vw; font-weight:600; }
+.lt { margin-right:1vw; border:.3vh dashed var(--bord); border-radius:.9vh; padding:.2vh .5vw; background:var(--hwbg); }
 .lt b { color:var(--bord); }
 
 .left .day { margin-bottom:.9vh; }
+
+/* Kvällsläge: mörk variant, mindre ljus från skärmen */
+:root.night { --bg:#15141a; --card:rgba(255,255,255,.05); --fg:#dedce6; --dim:#9a9aa8; --bord:#cf6f76;
+  --blue:#4a7090; --blue2:#2b3a4a; --line:#2d2c37; --sport:#5f9bcc; --other:#6f717d; --chip:#8a2a32;
+  --hwbg:rgba(255,255,255,.07); }
+.night body { background:
+  radial-gradient(ellipse at 0% 0%, rgba(150,40,50,.30) 0%, rgba(150,40,50,0) 45%),
+  radial-gradient(ellipse at 100% 100%, rgba(70,110,160,.28) 0%, rgba(70,110,160,0) 55%),
+  var(--bg); }
+.night section { box-shadow:none; }
+.night .avl.otis, .night .avl.keps { color:#15141a; }
