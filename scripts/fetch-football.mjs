@@ -14,6 +14,18 @@ const BIG = [
 const DAYS_AHEAD = 28;
 const isBig = (t) => !!t && BIG.some((re) => re.test(`${t.name || ""} ${t.shortName || ""}`));
 
+// --list: skriver ut vilka tävlingar nyckeln kommer åt (för felsökning) och avslutar
+if (process.argv.includes("--list")) {
+  const key = process.env.FOOTBALL_API_KEY;
+  if (!key) { console.log("Ingen FOOTBALL_API_KEY."); process.exit(0); }
+  const r = await fetch("https://api.football-data.org/v4/competitions", { headers: { "X-Auth-Token": key } });
+  console.log("Status:", r.status);
+  const j = await r.json();
+  for (const c of j.competitions || []) console.log(`${c.code}\t${c.name}\t${c.area?.name}\t${c.plan || ""}`);
+  console.log("Antal tävlingar:", (j.competitions || []).length);
+  process.exit(0);
+}
+
 let data;
 if (process.env.FOOTBALL_FILE) {
   data = JSON.parse(readFileSync(process.env.FOOTBALL_FILE, "utf8"));

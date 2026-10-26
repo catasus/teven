@@ -22,6 +22,10 @@ jobs:
       - run: node scripts/fetch-calendar.mjs HOMEWORK_ICS_URLS docs/homework.json 14 desc
         env:
           HOMEWORK_ICS_URLS: ${{ secrets.HOMEWORK_ICS_URLS }}
+      - run: node scripts/fetch-football.mjs --list
+        continue-on-error: true
+        env:
+          FOOTBALL_API_KEY: ${{ secrets.FOOTBALL_API_KEY }}
       - run: node scripts/fetch-football.mjs
         continue-on-error: true
         env:
