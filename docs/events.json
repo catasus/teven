@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26T21:51:24.612Z",
+ "updated": "2026-10-27T00:58:35.326Z",
  "events": [
   {
    "who": "",
@@ -7,14 +7,6 @@
    "location": "",
    "start": "2026-10-24",
    "end": "2026-11-02",
-   "allDay": true
-  },
-  {
-   "who": "",
-   "title": "Melker fritids",
-   "location": "",
-   "start": "2026-10-26",
-   "end": "2026-10-27",
    "allDay": true
   },
   {
@@ -104,6 +96,14 @@
    "start": "2026-11-07T16:30:00.000Z",
    "end": "2026-11-07T20:15:00.000Z",
    "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Hector Finland med jobbet",
+   "location": "",
+   "start": "2026-11-10",
+   "end": "2026-11-12",
+   "allDay": true
   }
  ]
 }

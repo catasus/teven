@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26T21:51:29.488Z",
+ "updated": "2026-10-27T00:58:40.593Z",
  "events": [
   {
    "who": "Otis",
@@ -7,6 +7,22 @@
    "location": "Tellusborgshallen (Hall 2)",
    "start": "2026-10-28T17:00:00.000Z",
    "end": "2026-10-28T18:30:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "Träning - Högalids IF P13 IB",
+   "location": "Liljeholmshallen 1 (Hall 1)",
+   "start": "2026-11-02T17:00:00.000Z",
+   "end": "2026-11-02T18:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Melker",
+   "title": "Träning - Hammarby IF FF P2016-22",
+   "location": "Björkhagens Skola",
+   "start": "2026-11-02T18:00:00.000Z",
+   "end": "2026-11-02T19:00:00.000Z",
    "allDay": false
   }
  ]
