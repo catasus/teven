@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27T21:02:09.798Z",
+ "updated": "2026-10-28T00:28:58.496Z",
  "events": [
   {
    "who": "",
@@ -104,6 +104,22 @@
    "start": "2026-11-10",
    "end": "2026-11-12",
    "allDay": true
+  },
+  {
+   "who": "",
+   "title": "Hectors flyg till Helsingfors",
+   "location": "",
+   "start": "2026-11-10T07:20:00.000Z",
+   "end": "2026-11-10T07:30:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Hector badmin",
+   "location": "",
+   "start": "2026-11-10T19:00:00.000Z",
+   "end": "2026-11-10T20:45:00.000Z",
+   "allDay": false
   }
  ]
 }
