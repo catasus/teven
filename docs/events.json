@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28T18:30:29.212Z",
+ "updated": "2026-10-28T22:50:46.124Z",
  "events": [
   {
    "who": "",
@@ -47,6 +47,14 @@
    "location": "",
    "start": "2026-10-31T15:45:00.000Z",
    "end": "2026-10-31T20:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Söndagsmiddag hos farmor och farfar (Otis, Melker ska med!)",
+   "location": "",
+   "start": "2026-11-01T16:00:00.000Z",
+   "end": "2026-11-01T18:45:00.000Z",
    "allDay": false
   },
   {
