@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28T22:50:46.124Z",
+ "updated": "2026-10-29T01:59:25.808Z",
  "events": [
   {
    "who": "",
@@ -111,6 +111,14 @@
    "location": "",
    "start": "2026-11-10T19:00:00.000Z",
    "end": "2026-11-10T20:45:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Hectors flyg landar",
+   "location": "",
+   "start": "2026-11-11T21:20:00.000Z",
+   "end": "2026-11-11T21:25:00.000Z",
    "allDay": false
   }
  ]
