@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30T11:36:36.755Z",
+ "updated": "2026-10-30T17:10:13.756Z",
  "events": [
   {
    "who": "",
@@ -16,6 +16,14 @@
    "start": "2026-10-30",
    "end": "2026-10-31",
    "allDay": true
+  },
+  {
+   "who": "",
+   "title": "HITWOD. - SLUSSEN",
+   "location": "SLUSSEN",
+   "start": "2026-10-31T09:30:00.000Z",
+   "end": "2026-10-31T10:15:00.000Z",
+   "allDay": false
   },
   {
    "who": "",
