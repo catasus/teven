@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29T20:16:17.624Z",
+ "updated": "2026-10-30T00:00:36.489Z",
  "events": [
   {
    "who": "",
@@ -7,14 +7,6 @@
    "location": "",
    "start": "2026-10-24",
    "end": "2026-11-02",
-   "allDay": true
-  },
-  {
-   "who": "",
-   "title": "Melker fritids",
-   "location": "",
-   "start": "2026-10-28",
-   "end": "2026-10-30",
    "allDay": true
   },
   {
@@ -112,6 +104,14 @@
    "start": "2026-11-11T21:20:00.000Z",
    "end": "2026-11-11T21:25:00.000Z",
    "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Däckbyte ",
+   "location": "",
+   "start": "2026-11-13",
+   "end": "2026-11-14",
+   "allDay": true
   }
  ]
 }
