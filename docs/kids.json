@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30T21:28:08.956Z",
+ "updated": "2026-10-31T00:56:00.425Z",
  "events": [
   {
    "who": "Otis",
@@ -31,6 +31,14 @@
    "location": "Bäckahagens Skola (gymnastiksal 1, vänster)",
    "start": "2026-11-04T17:30:00.000Z",
    "end": "2026-11-04T18:30:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Melker",
+   "title": "Träning - Hammarby IF FF P2016-22",
+   "location": "Hagsätra IP (konstgräs 1 11 manna  halvplan B matchplan 12)",
+   "start": "2026-11-06T17:00:00.000Z",
+   "end": "2026-11-06T18:00:00.000Z",
    "allDay": false
   }
  ]
