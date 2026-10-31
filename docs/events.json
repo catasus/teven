@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T20:32:01.667Z",
+ "updated": "2026-10-31T23:42:57.875Z",
  "events": [
   {
    "who": "",
@@ -8,6 +8,14 @@
    "start": "2026-10-24",
    "end": "2026-11-02",
    "allDay": true
+  },
+  {
+   "who": "",
+   "title": "Bajenmatch  på TV",
+   "location": "",
+   "start": "2026-11-01T13:00:00.000Z",
+   "end": "2026-11-01T15:30:00.000Z",
+   "allDay": false
   },
   {
    "who": "",
