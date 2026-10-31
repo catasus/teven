@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T06:28:02.754Z",
+ "updated": "2026-10-31T12:55:14.836Z",
  "events": [
   {
    "who": "",
@@ -8,14 +8,6 @@
    "start": "2026-10-24",
    "end": "2026-11-02",
    "allDay": true
-  },
-  {
-   "who": "",
-   "title": "HITWOD. - SLUSSEN",
-   "location": "SLUSSEN",
-   "start": "2026-10-31T09:30:00.000Z",
-   "end": "2026-10-31T10:15:00.000Z",
-   "allDay": false
   },
   {
    "who": "",
@@ -43,10 +35,26 @@
   },
   {
    "who": "",
+   "title": "PACE. - RUNBOX",
+   "location": "RUNBOX",
+   "start": "2026-11-02T10:00:00.000Z",
+   "end": "2026-11-02T10:45:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
    "title": "Hector badmin",
    "location": "",
    "start": "2026-11-03T19:00:00.000Z",
    "end": "2026-11-03T20:45:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "HITWOD. - SLUSSEN",
+   "location": "SLUSSEN",
+   "start": "2026-11-05T16:30:00.000Z",
+   "end": "2026-11-05T17:15:00.000Z",
    "allDay": false
   },
   {
@@ -71,6 +79,14 @@
    "location": "",
    "start": "2026-11-07T16:30:00.000Z",
    "end": "2026-11-07T20:15:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Fira Mormor med gyros (Otis och Melker är med)",
+   "location": "Esperia\nSankt Paulsgatan 17, 118 46 Stockholm, Sverige",
+   "start": "2026-11-08T12:00:00.000Z",
+   "end": "2026-11-08T13:00:00.000Z",
    "allDay": false
   },
   {
