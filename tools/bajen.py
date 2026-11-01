@@ -1,4 +1,6 @@
-"""Öppnar bajen.land i TV:ns webbläsare och skriver in lösenordet åt dig.
+"""Startar TV:ns webbläsare och skriver in lösenordet åt dig.
+
+Ställ först in https://bajen.land/ som startsida i TV:ns Internet-app (en gång). Då öppnas sidan av sig själv.
 
 Installera en gång:  python -m pip install "samsungtvws[async,encrypted]"
 Kör:                 python tools/bajen.py
@@ -34,7 +36,7 @@ class _IgnoreAtStartup:
 
 _conn.IGNORE_EVENTS_AT_STARTUP = _IgnoreAtStartup(_conn.IGNORE_EVENTS_AT_STARTUP)
 
-VERSION = 6
+VERSION = 7
 TV_IP = "192.168.68.50"
 URL = "https://bajen.land/"
 TOKEN_FILE = "tv-token.txt"
@@ -44,7 +46,7 @@ p.add_argument("--test", action="store_true", help="öppna bara sidan, skriv ing
 p.add_argument("--vantan", type=float, default=10, help="sekunder att vänta på att sidan laddar (standard 10)")
 p.add_argument("--utan-enter", action="store_true", help="skriv lösenordet men tryck inte Enter")
 p.add_argument("--url", default=URL)
-p.add_argument("--metod", type=int, default=1, choices=[1, 2, 3, 4], help="hur sidan öppnas (se --metoder)")
+p.add_argument("--metod", type=int, default=5, choices=[1, 2, 3, 4, 5], help="hur sidan öppnas (se --metoder)")
 p.add_argument("--metoder", action="store_true", help="prova de olika sätten att öppna sidan och se vilket som fungerar")
 p.add_argument("--diagnos", action="store_true", help="prova stegen ett i taget och skriv ut vad TV:n svarar")
 a = p.parse_args()
@@ -71,6 +73,12 @@ def forsok(vad, fn, antal=3):
 
 def oppna_sida(metod, url):
     """Fyra sätt att få TV:ns webbläsare att öppna en adress."""
+    if metod == 5:
+        # Startar bara webbläsaren (så som det funkade i --diagnos). Sidan som visas är webbläsarens startsida,
+        # så ställ in https://bajen.land/ som startsida i TV:ns Internet-app.
+        r = tv.rest_app_run("org.tizen.browser")
+        print("  TV:n svarade:", r)
+        return
     if metod in (3, 4):  # börja om från startmenyn så att webbläsaren startar från noll
         tv.send_key("KEY_HOME")
         time.sleep(3)
