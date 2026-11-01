@@ -31,7 +31,7 @@ class _IgnoreAtStartup:
 
 _conn.IGNORE_EVENTS_AT_STARTUP = _IgnoreAtStartup(_conn.IGNORE_EVENTS_AT_STARTUP)
 
-VERSION = 3
+VERSION = 4
 TV_IP = "192.168.68.50"
 URL = "http://bajen.land"
 TOKEN_FILE = "tv-token.txt"
@@ -41,6 +41,7 @@ p.add_argument("--test", action="store_true", help="öppna bara sidan, skriv ing
 p.add_argument("--vantan", type=float, default=10, help="sekunder att vänta på att sidan laddar (standard 10)")
 p.add_argument("--utan-enter", action="store_true", help="skriv lösenordet men tryck inte Enter")
 p.add_argument("--url", default=URL)
+p.add_argument("--diagnos", action="store_true", help="prova stegen ett i taget och skriv ut vad TV:n svarar")
 a = p.parse_args()
 print(f"bajen.py version {VERSION}")
 
@@ -62,6 +63,40 @@ def forsok(vad, fn, antal=3):
                 raise
             time.sleep(2)
 
+
+if a.diagnos:
+    def tv_handelse(event, response):
+        print("   TV säger:", event, str(response)[:160])
+
+    print("1) Frågar TV:n om den själv (utan fjärrkontroll):")
+    try:
+        info = tv.rest_device_info().get("device", {})
+        for k in ("modelName", "PowerState", "FrameTVSupport", "TokenAuthSupport", "OS", "WifiMac"):
+            if k in info:
+                print(f"   {k}: {info[k]}")
+    except Exception as e:  # noqa: BLE001
+        print("   Fick inget svar:", type(e).__name__, e)
+    print("2) Skickar knapptryck HOME. Titta på TV:n: kommer startmenyn upp?")
+    tv.start_listening(callback=tv_handelse)
+    time.sleep(1)
+    tv.send_key("KEY_HOME")
+    time.sleep(4)
+    print("3) Startar webbläsaren (via REST). Titta på TV:n: öppnas Internet-appen?")
+    try:
+        print("   Svar:", tv.rest_app_run("org.tizen.browser"))
+    except Exception as e:  # noqa: BLE001
+        print("   Misslyckades:", type(e).__name__, e)
+    time.sleep(5)
+    print(f"4) Öppnar {a.url} i webbläsaren (via anslutningen). Titta på TV:n.")
+    tv.open_browser(a.url)
+    time.sleep(6)
+    try:
+        print("5) Webbläsarens status:", tv.rest_app_status("org.tizen.browser"))
+    except Exception as e:  # noqa: BLE001
+        print("5) Kunde inte läsa webbläsarens status:", type(e).__name__, e)
+    tv.close()
+    print("Klart. Berätta för Claude vad du såg på TV:n vid steg 2, 3 och 4, och klistra in texten ovan.")
+    raise SystemExit(0)
 
 password = ""
 if not a.test:
