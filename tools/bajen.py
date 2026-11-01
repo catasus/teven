@@ -15,6 +15,11 @@ import json
 import time
 
 from samsungtvws import SamsungTVWS
+import samsungtvws.connection as _conn
+
+# Vissa Samsung-TV:ar (bl.a. Frame 2020) skickar "touchDisable" före själva anslutningsbeskedet.
+# Biblioteket tolkar det som ett fel, så vi säger åt det att ignorera det i starten.
+_conn.IGNORE_EVENTS_AT_STARTUP = tuple(_conn.IGNORE_EVENTS_AT_STARTUP) + ("ms.remote.touchDisable",)
 
 TV_IP = "192.168.68.50"
 URL = "http://bajen.land"
@@ -29,12 +34,29 @@ a = p.parse_args()
 
 tv = SamsungTVWS(host=TV_IP, port=8002, token_file=TOKEN_FILE)
 
+
+def forsok(vad, fn, antal=3):
+    """Kör fn och försöker igen några gånger om TV:n inte svarar direkt."""
+    for i in range(1, antal + 1):
+        try:
+            return fn()
+        except Exception as e:  # noqa: BLE001
+            print(f"  {vad}: försök {i}/{antal} misslyckades ({type(e).__name__}: {e})")
+            try:
+                tv.close()
+            except Exception:  # noqa: BLE001
+                pass
+            if i == antal:
+                raise
+            time.sleep(2)
+
+
 password = ""
 if not a.test:
     password = getpass.getpass("Lösenord för bajen.land (syns inte när du skriver): ")
 
 print("Öppnar", a.url, "på TV:n …")
-tv.open_browser(a.url)
+forsok("öppna webbläsaren", lambda: tv.open_browser(a.url))
 
 if a.test:
     print("Klart. Sidan ska nu öppnas på TV:n. Inget skrevs.")
@@ -44,7 +66,6 @@ print(f"Väntar {a.vantan:.0f} s på att sidan laddar …")
 time.sleep(a.vantan)
 
 # Skicka texten på samma sätt som Samsungs fjärrkontroll-app gör när du skriver med telefonens tangentbord
-tv.open()
 msg = {
     "method": "ms.remote.control",
     "params": {
@@ -54,8 +75,16 @@ msg = {
         "TypeOfRemote": "SendInputString",
     },
 }
-tv.connection.send(json.dumps(msg))
+
+
+def skriv():
+    if tv.connection is None:
+        tv.open()
+    tv.connection.send(json.dumps(msg))
+
+
+forsok("skriva lösenordet", skriv)
 time.sleep(1.5)
 if not a.utan_enter:
-    tv.send_key("KEY_ENTER")
+    forsok("trycka Enter", lambda: tv.send_key("KEY_ENTER"))
 print("Klart. Titta på TV:n.")
