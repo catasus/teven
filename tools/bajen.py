@@ -34,9 +34,9 @@ class _IgnoreAtStartup:
 
 _conn.IGNORE_EVENTS_AT_STARTUP = _IgnoreAtStartup(_conn.IGNORE_EVENTS_AT_STARTUP)
 
-VERSION = 5
+VERSION = 6
 TV_IP = "192.168.68.50"
-URL = "http://bajen.land"
+URL = "https://bajen.land/"
 TOKEN_FILE = "tv-token.txt"
 
 p = argparse.ArgumentParser()
