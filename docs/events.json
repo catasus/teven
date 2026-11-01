@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01T16:23:15.058Z",
+ "updated": "2026-11-01T20:39:08.038Z",
  "events": [
   {
    "who": "",
@@ -11,19 +11,19 @@
   },
   {
    "who": "",
-   "title": "Söndagsmiddag hos farmor och farfar (Otis, Melker ska med!)",
-   "location": "",
-   "start": "2026-11-01T16:00:00.000Z",
-   "end": "2026-11-01T18:45:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "",
    "title": "INOMHUSGYMPA OTIS",
    "location": "",
    "start": "2026-11-02",
    "end": "2026-11-03",
    "allDay": true
+  },
+  {
+   "who": "",
+   "title": "Otis och Keps gymmar kl 18.40",
+   "location": "",
+   "start": "2026-11-03T17:35:00.000Z",
+   "end": "2026-11-03T17:50:00.000Z",
+   "allDay": false
   },
   {
    "who": "",
@@ -43,7 +43,7 @@
   },
   {
    "who": "",
-   "title": "HITWOD. - SLUSSEN",
+   "title": "Keps tränar HITWOD. - SLUSSEN",
    "location": "SLUSSEN",
    "start": "2026-11-05T16:30:00.000Z",
    "end": "2026-11-05T17:15:00.000Z",
@@ -63,14 +63,6 @@
    "location": "",
    "start": "2026-11-07T15:25:00.000Z",
    "end": "2026-11-07T21:00:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "",
-   "title": "Middag med ViktorAnnaJockeMirreNiclasEbba",
-   "location": "",
-   "start": "2026-11-07T16:30:00.000Z",
-   "end": "2026-11-07T20:15:00.000Z",
    "allDay": false
   },
   {
