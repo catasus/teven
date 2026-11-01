@@ -17,9 +17,19 @@ import time
 from samsungtvws import SamsungTVWS
 import samsungtvws.connection as _conn
 
-# Vissa Samsung-TV:ar (bl.a. Frame 2020) skickar "touchDisable" före själva anslutningsbeskedet.
-# Biblioteket tolkar det som ett fel, så vi säger åt det att ignorera det i starten.
-_conn.IGNORE_EVENTS_AT_STARTUP = tuple(_conn.IGNORE_EVENTS_AT_STARTUP) + ("ms.remote.touchDisable",)
+# Vissa Samsung-TV:ar (bl.a. Frame 2020) skickar flera extra meddelanden (touchDisable, touchEnable m.fl.)
+# före själva anslutningsbeskedet. Biblioteket tolkar det som ett fel, så vi säger åt det att ignorera dem i starten.
+# Anslutningsbeskedet, "ej godkänd" och fel släpps igenom som vanligt.
+class _IgnoreAtStartup:
+    def __init__(self, original):
+        self.original = tuple(original)
+
+    def __contains__(self, event):
+        e = str(event)
+        return e in self.original or e.startswith(("ms.remote.", "ms.channel.client", "ms.channel.ready"))
+
+
+_conn.IGNORE_EVENTS_AT_STARTUP = _IgnoreAtStartup(_conn.IGNORE_EVENTS_AT_STARTUP)
 
 TV_IP = "192.168.68.50"
 URL = "http://bajen.land"
