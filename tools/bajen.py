@@ -31,6 +31,7 @@ class _IgnoreAtStartup:
 
 _conn.IGNORE_EVENTS_AT_STARTUP = _IgnoreAtStartup(_conn.IGNORE_EVENTS_AT_STARTUP)
 
+VERSION = 3
 TV_IP = "192.168.68.50"
 URL = "http://bajen.land"
 TOKEN_FILE = "tv-token.txt"
@@ -41,6 +42,7 @@ p.add_argument("--vantan", type=float, default=10, help="sekunder att vänta på
 p.add_argument("--utan-enter", action="store_true", help="skriv lösenordet men tryck inte Enter")
 p.add_argument("--url", default=URL)
 a = p.parse_args()
+print(f"bajen.py version {VERSION}")
 
 tv = SamsungTVWS(host=TV_IP, port=8002, token_file=TOKEN_FILE)
 
