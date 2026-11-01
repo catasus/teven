@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01T09:41:52.366Z",
+ "updated": "2026-11-01T16:23:15.058Z",
  "events": [
   {
    "who": "",
@@ -8,14 +8,6 @@
    "start": "2026-10-24",
    "end": "2026-11-02",
    "allDay": true
-  },
-  {
-   "who": "",
-   "title": "Bajenmatch  på TV",
-   "location": "",
-   "start": "2026-11-01T13:00:00.000Z",
-   "end": "2026-11-01T15:30:00.000Z",
-   "allDay": false
   },
   {
    "who": "",
@@ -35,18 +27,18 @@
   },
   {
    "who": "",
-   "title": "PACE. - RUNBOX",
-   "location": "RUNBOX",
-   "start": "2026-11-02T10:00:00.000Z",
-   "end": "2026-11-02T10:45:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "",
    "title": "Hector badmin",
    "location": "",
    "start": "2026-11-03T19:00:00.000Z",
    "end": "2026-11-03T20:45:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Kerstin på besök (Otis och Melker)",
+   "location": "",
+   "start": "2026-11-05T14:45:00.000Z",
+   "end": "2026-11-05T15:30:00.000Z",
    "allDay": false
   },
   {
