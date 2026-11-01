@@ -62,3 +62,6 @@ Efter en ändring i `docs/` ska `build` bytas i både `docs/index.html` (meta-ta
 
 ## Hammarby, landslaget och annan fotboll
 Lägg en hemlighet `FOOTBALL_ICS_URLS` med en kalenderlänk (ICS) per rad, i formen `Otis|länk`. Länkar hittar du på FotMob: öppna lagets sida, välj "Sync to calendar" och kopiera ICS-länken. Fotboll visas alltid längst ned i varje dag.
+
+## Bajen-matcher (lösenord till TV:n)
+`tools/bajen.py` öppnar bajen.land i TV:ns webbläsare och skriver lösenordet åt dig, från en dator på samma wifi. Se instruktionerna överst i filen.
