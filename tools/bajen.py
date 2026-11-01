@@ -16,6 +16,9 @@ import time
 
 from samsungtvws import SamsungTVWS
 import samsungtvws.connection as _conn
+import urllib3
+
+urllib3.disable_warnings()  # TV:ns REST-gränssnitt har ett självsignerat certifikat; varningen är irrelevant här
 
 # Vissa Samsung-TV:ar (bl.a. Frame 2020) skickar flera extra meddelanden (touchDisable, touchEnable m.fl.)
 # före själva anslutningsbeskedet. Biblioteket tolkar det som ett fel, så vi säger åt det att ignorera dem i starten.
@@ -31,7 +34,7 @@ class _IgnoreAtStartup:
 
 _conn.IGNORE_EVENTS_AT_STARTUP = _IgnoreAtStartup(_conn.IGNORE_EVENTS_AT_STARTUP)
 
-VERSION = 4
+VERSION = 5
 TV_IP = "192.168.68.50"
 URL = "http://bajen.land"
 TOKEN_FILE = "tv-token.txt"
@@ -41,6 +44,8 @@ p.add_argument("--test", action="store_true", help="öppna bara sidan, skriv ing
 p.add_argument("--vantan", type=float, default=10, help="sekunder att vänta på att sidan laddar (standard 10)")
 p.add_argument("--utan-enter", action="store_true", help="skriv lösenordet men tryck inte Enter")
 p.add_argument("--url", default=URL)
+p.add_argument("--metod", type=int, default=1, choices=[1, 2, 3, 4], help="hur sidan öppnas (se --metoder)")
+p.add_argument("--metoder", action="store_true", help="prova de olika sätten att öppna sidan och se vilket som fungerar")
 p.add_argument("--diagnos", action="store_true", help="prova stegen ett i taget och skriv ut vad TV:n svarar")
 a = p.parse_args()
 print(f"bajen.py version {VERSION}")
@@ -63,6 +68,29 @@ def forsok(vad, fn, antal=3):
                 raise
             time.sleep(2)
 
+
+def oppna_sida(metod, url):
+    """Fyra sätt att få TV:ns webbläsare att öppna en adress."""
+    if metod in (3, 4):  # börja om från startmenyn så att webbläsaren startar från noll
+        tv.send_key("KEY_HOME")
+        time.sleep(3)
+    typ = "NATIVE_LAUNCH" if metod in (1, 3) else "DEEP_LINK"
+    tv.run_app("org.tizen.browser", typ, url)
+
+
+if a.metoder:
+    print("Jag provar fyra sätt att öppna", a.url, "på TV:n. Titta på TV:n efter varje.")
+    for m in (1, 2, 3, 4):
+        input(f"\nMetod {m}: tryck Enter för att prova … ")
+        forsok(f"metod {m}", lambda m=m: oppna_sida(m, a.url))
+        time.sleep(8)
+        if input("Öppnades bajen.land? (j/n): ").strip().lower().startswith("j"):
+            print(f"\nBra! Använd: python bajen.py --metod {m}")
+            break
+    else:
+        print("\nIngen av metoderna öppnade sidan. Berätta det för Claude.")
+    tv.close()
+    raise SystemExit(0)
 
 if a.diagnos:
     def tv_handelse(event, response):
@@ -103,7 +131,7 @@ if not a.test:
     password = getpass.getpass("Lösenord för bajen.land (syns inte när du skriver): ")
 
 print("Öppnar", a.url, "på TV:n …")
-forsok("öppna webbläsaren", lambda: tv.open_browser(a.url))
+forsok("öppna webbläsaren", lambda: oppna_sida(a.metod, a.url))
 
 if a.test:
     print("Klart. Sidan ska nu öppnas på TV:n. Inget skrevs.")
