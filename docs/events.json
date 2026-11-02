@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02T10:55:35.308Z",
+ "updated": "2026-11-02T20:34:20.569Z",
  "events": [
   {
    "who": "",
@@ -27,6 +27,14 @@
   },
   {
    "who": "",
+   "title": "Hämta från Bäckahagen",
+   "location": "",
+   "start": "2026-11-04T18:30:00.000Z",
+   "end": "2026-11-04T19:30:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
    "title": "Kerstin på besök (Otis och Melker)",
    "location": "",
    "start": "2026-11-05T14:45:00.000Z",
@@ -35,7 +43,7 @@
   },
   {
    "who": "",
-   "title": "Keps tränar HITWOD. - SLUSSEN",
+   "title": "HITWOD. - SLUSSEN",
    "location": "SLUSSEN",
    "start": "2026-11-05T16:30:00.000Z",
    "end": "2026-11-05T17:15:00.000Z",
