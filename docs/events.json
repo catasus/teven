@@ -1,14 +1,6 @@
 {
- "updated": "2026-11-02T20:34:20.569Z",
+ "updated": "2026-11-03T02:38:10.311Z",
  "events": [
-  {
-   "who": "",
-   "title": "INOMHUSGYMPA OTIS",
-   "location": "",
-   "start": "2026-11-02",
-   "end": "2026-11-03",
-   "allDay": true
-  },
   {
    "who": "",
    "title": "Otis och Keps gymmar kl 18.40",
@@ -136,6 +128,14 @@
    "start": "2026-11-15T12:00:00.000Z",
    "end": "2026-11-15T14:35:00.000Z",
    "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Hector i Nederländerna",
+   "location": "",
+   "start": "2026-11-17",
+   "end": "2026-11-20",
+   "allDay": true
   }
  ]
 }
