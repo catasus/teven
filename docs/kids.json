@@ -1,22 +1,6 @@
 {
- "updated": "2026-11-04T17:38:12.060Z",
+ "updated": "2026-11-04T22:51:54.418Z",
  "events": [
-  {
-   "who": "Otis",
-   "title": "Träning - Högalids IF P13 IB",
-   "location": "Tellusborgshallen (Hall 2)",
-   "start": "2026-11-04T17:00:00.000Z",
-   "end": "2026-11-04T18:30:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "Melker",
-   "title": "Träning - Hammarby IF FF P2016-22",
-   "location": "Bäckahagens Skola (gymnastiksal 1, vänster)",
-   "start": "2026-11-04T17:30:00.000Z",
-   "end": "2026-11-04T18:30:00.000Z",
-   "allDay": false
-  },
   {
    "who": "Melker",
    "title": "Träning - Hammarby IF FF P2016-22",
@@ -42,14 +26,6 @@
    "allDay": false
   },
   {
-   "who": "Melker",
-   "title": "Match: Sirius svart  - Hammarby IF Fotbollförening",
-   "location": "Uppsala ",
-   "start": "2026-11-08T11:45:00.000Z",
-   "end": "2026-11-08T13:00:00.000Z",
-   "allDay": false
-  },
-  {
    "who": "Otis",
    "title": "Match Högalids IF - Djurgårdens IF IBS",
    "location": "Tellusborgshallen 1",
@@ -71,6 +47,14 @@
    "location": "Gamla Enskede Skola (gymnastiksal 2)",
    "start": "2026-11-09T17:00:00.000Z",
    "end": "2026-11-09T18:15:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Melker",
+   "title": "Träning Utomhus - Hammarby IF FF P2016-22",
+   "location": "Gubbängens BP ",
+   "start": "2026-11-10T17:00:00.000Z",
+   "end": "2026-11-10T18:00:00.000Z",
    "allDay": false
   }
  ]

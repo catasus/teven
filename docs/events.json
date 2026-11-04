@@ -1,14 +1,6 @@
 {
- "updated": "2026-11-04T17:38:07.173Z",
+ "updated": "2026-11-04T22:51:49.841Z",
  "events": [
-  {
-   "who": "",
-   "title": "Hämta från Bäckahagen",
-   "location": "",
-   "start": "2026-11-04T18:30:00.000Z",
-   "end": "2026-11-04T19:30:00.000Z",
-   "allDay": false
-  },
   {
    "who": "",
    "title": "Kerstin på besök (Otis och Melker)",
@@ -47,6 +39,14 @@
    "location": "Esperia\nSankt Paulsgatan 17, 118 46 Stockholm, Sverige",
    "start": "2026-11-08T12:00:00.000Z",
    "end": "2026-11-08T13:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Otis utflykt till GIH",
+   "location": "",
+   "start": "2026-11-09T09:25:00.000Z",
+   "end": "2026-11-09T12:25:00.000Z",
    "allDay": false
   },
   {
