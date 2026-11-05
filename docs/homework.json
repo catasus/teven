@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T10:04:34.005Z",
+ "updated": "2026-11-05T17:58:58.950Z",
  "events": [
   {
    "who": "Otis",
@@ -8,6 +8,15 @@
    "description": "Information finns på Teams NO (samma information finns även i pappersform)",
    "start": "2026-11-06T08:15:00.000Z",
    "end": "2026-11-06T09:15:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "English: Homework",
+   "location": "",
+   "description": "Hi, For today I want you to be able to listen to and understand the story Lemonade and learn the words to the text. You can listen to the text here and you find the vocabulary list in the attached pdf. Best, Karina",
+   "start": "2026-11-12T11:55:00.000Z",
+   "end": "2026-11-12T12:50:00.000Z",
    "allDay": false
   },
   {
