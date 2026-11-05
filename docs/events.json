@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T02:56:14.137Z",
+ "updated": "2026-11-05T10:04:26.438Z",
  "events": [
   {
    "who": "",
@@ -15,6 +15,14 @@
    "location": "SLUSSEN",
    "start": "2026-11-05T16:30:00.000Z",
    "end": "2026-11-05T17:15:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Bokning hos Brödernas Barbershop",
+   "location": "Brödernas Barbershop",
+   "start": "2026-11-06T15:30:00.000Z",
+   "end": "2026-11-06T16:00:00.000Z",
    "allDay": false
   },
   {
