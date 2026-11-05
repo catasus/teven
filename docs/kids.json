@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T17:58:56.920Z",
+ "updated": "2026-11-05T23:16:43.780Z",
  "events": [
   {
    "who": "Melker",
@@ -39,14 +39,6 @@
    "location": "Liljeholmshallen 1 (Hall 1)",
    "start": "2026-11-09T17:00:00.000Z",
    "end": "2026-11-09T18:00:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "Melker",
-   "title": "Träning - Hammarby IF FF P2016-22",
-   "location": "Gamla Enskede Skola (gymnastiksal 2)",
-   "start": "2026-11-09T17:00:00.000Z",
-   "end": "2026-11-09T18:15:00.000Z",
    "allDay": false
   },
   {
