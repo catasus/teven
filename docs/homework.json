@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T22:51:56.219Z",
+ "updated": "2026-11-05T02:56:21.774Z",
  "events": [
   {
    "who": "Otis",
@@ -18,6 +18,32 @@
    "start": "2026-11-13T07:10:00.000Z",
    "end": "2026-11-13T08:10:00.000Z",
    "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "7A prov geografi",
+   "location": "",
+   "start": "2026-11-18T12:45:00.000Z",
+   "end": "2026-11-18T13:45:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "MA-prov 5A och 5C",
+   "location": "",
+   "description": "Kapitel 2 Tal i bråkform (s. 62-117) Du ska kunna: Omvandla mellan bråkform och blandad form Förkorta bråk Räkna med tal i bråkform En sammanfattning av metoderna finns på s. 115 i boken. När du övar till provet kan du: Testa dig själv på s. 114 Göra repetitionsuppgifterna på s. 116-117 Tränarutorna på övasidorna.",
+   "start": "2026-11-19",
+   "end": "2026-11-20",
+   "allDay": true
+  },
+  {
+   "who": "Melker",
+   "title": "MA-prov 5A och 5C",
+   "location": "",
+   "description": "Kapitel 2 Tal i bråkform (s. 62-117) Du ska kunna: Omvandla mellan bråkform och blandad form Förkorta bråk Räkna med tal i bråkform En sammanfattning av metoderna finns på s. 115 i boken. När du övar till provet kan du: Testa dig själv på s. 114 Göra repetitionsuppgifterna på s. 116-117 Tränarutorna på övasidorna.",
+   "start": "2026-11-19",
+   "end": "2026-11-20",
+   "allDay": true
   }
  ]
 }
