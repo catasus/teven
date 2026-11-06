@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T23:16:43.780Z",
+ "updated": "2026-11-06T03:29:31.953Z",
  "events": [
   {
    "who": "Melker",
@@ -63,6 +63,14 @@
    "location": "Bäckahagen Skola (gymnastiksal 1, vänster)",
    "start": "2026-11-11T17:30:00.000Z",
    "end": "2026-11-11T18:30:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Melker",
+   "title": "Träning Utomhus - Hammarby IF FF P2016-22",
+   "location": "Söderstadion",
+   "start": "2026-11-12T17:00:00.000Z",
+   "end": "2026-11-12T18:15:00.000Z",
    "allDay": false
   }
  ]
