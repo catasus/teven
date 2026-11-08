@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T23:00:22.339Z",
+ "updated": "2026-11-08T02:24:18.295Z",
  "events": [
   {
    "who": "Otis",
@@ -55,6 +55,30 @@
    "location": "Söderstadion",
    "start": "2026-11-12T17:00:00.000Z",
    "end": "2026-11-12T18:15:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "Café Högan",
+   "location": "Liljeholmshallarna",
+   "start": "2026-11-14T07:00:00.000Z",
+   "end": "2026-11-15T17:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "Match IFK Haninge - Högalids IF",
+   "location": "Lyckeby Sporthall",
+   "start": "2026-11-14T09:15:00.000Z",
+   "end": "2026-11-14T11:15:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Melker",
+   "title": "Match: Enebyberg IF - Hammarby IF Fotbollförening",
+   "location": "Enebybergs IP ",
+   "start": "2026-11-14T10:00:00.000Z",
+   "end": "2026-11-14T11:15:00.000Z",
    "allDay": false
   }
  ]
