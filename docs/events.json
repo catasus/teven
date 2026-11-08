@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T16:07:41.563Z",
+ "updated": "2026-11-08T20:25:56.380Z",
  "events": [
   {
    "who": "",
@@ -75,22 +75,6 @@
   },
   {
    "who": "",
-   "title": "Hector i Nederländerna",
-   "location": "",
-   "start": "2026-11-17",
-   "end": "2026-11-20",
-   "allDay": true
-  },
-  {
-   "who": "",
-   "title": "Hectors plan åker ",
-   "location": "",
-   "start": "2026-11-17T07:00:00.000Z",
-   "end": "2026-11-17T07:30:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "",
    "title": "Hector badmin",
    "location": "",
    "start": "2026-11-17T19:00:00.000Z",
@@ -104,6 +88,14 @@
    "start": "2026-11-18",
    "end": "2026-11-21",
    "allDay": true
+  },
+  {
+   "who": "",
+   "title": "Hectors plan åker ",
+   "location": "",
+   "start": "2026-11-18T07:15:00.000Z",
+   "end": "2026-11-18T07:20:00.000Z",
+   "allDay": false
   },
   {
    "who": "",
