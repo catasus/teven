@@ -1,14 +1,6 @@
 {
- "updated": "2026-11-09T11:53:54.691Z",
+ "updated": "2026-11-09T21:41:59.106Z",
  "events": [
-  {
-   "who": "Otis",
-   "title": "Träning - Högalids IF P13 IB",
-   "location": "Liljeholmshallen 1 (Hall 1)",
-   "start": "2026-11-09T17:00:00.000Z",
-   "end": "2026-11-09T18:00:00.000Z",
-   "allDay": false
-  },
   {
    "who": "Melker",
    "title": "Träning Utomhus - Hammarby IF FF P2016-22",
@@ -54,7 +46,7 @@
    "title": "Match IFK Haninge - Högalids IF",
    "location": "Lyckeby Sporthall",
    "start": "2026-11-14T09:15:00.000Z",
-   "end": "2026-11-14T11:15:00.000Z",
+   "end": "2026-11-14T10:15:00.000Z",
    "allDay": false
   },
   {
@@ -78,7 +70,7 @@
    "title": "Match Skogås/Trångsunds IBK (A) - Högalids IF",
    "location": "Skogåshallen",
    "start": "2026-11-15T11:45:00.000Z",
-   "end": "2026-11-15T13:45:00.000Z",
+   "end": "2026-11-15T12:45:00.000Z",
    "allDay": false
   }
  ]

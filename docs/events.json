@@ -1,14 +1,6 @@
 {
- "updated": "2026-11-09T11:53:49.465Z",
+ "updated": "2026-11-09T21:41:54.461Z",
  "events": [
-  {
-   "who": "",
-   "title": "Otis utflykt till GIH",
-   "location": "",
-   "start": "2026-11-09T09:25:00.000Z",
-   "end": "2026-11-09T12:25:00.000Z",
-   "allDay": false
-  },
   {
    "who": "",
    "title": "Hector Finland med jobbet",
@@ -56,6 +48,14 @@
    "start": "2026-11-13",
    "end": "2026-11-14",
    "allDay": true
+  },
+  {
+   "who": "",
+   "title": "Otis match",
+   "location": "Lyckeby Sporthall, Skomakarvägen 24, 136 70 Vendelsö, Sverige",
+   "start": "2026-11-14T08:30:00.000Z",
+   "end": "2026-11-14T09:30:00.000Z",
+   "allDay": false
   },
   {
    "who": "",
