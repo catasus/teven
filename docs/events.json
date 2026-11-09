@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T23:50:14.250Z",
+ "updated": "2026-11-09T03:21:48.027Z",
  "events": [
   {
    "who": "",
@@ -104,6 +104,14 @@
    "start": "2026-11-19T17:00:00.000Z",
    "end": "2026-11-19T17:20:00.000Z",
    "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Farfar Bino har bilen",
+   "location": "",
+   "start": "2026-11-23",
+   "end": "2026-11-24",
+   "allDay": true
   }
  ]
 }
