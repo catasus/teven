@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T03:48:38.672Z",
+ "updated": "2026-11-10T11:54:53.844Z",
  "events": [
   {
    "who": "",
@@ -8,14 +8,6 @@
    "start": "2026-11-10",
    "end": "2026-11-12",
    "allDay": true
-  },
-  {
-   "who": "",
-   "title": "Hectors flyg till Helsingfors",
-   "location": "",
-   "start": "2026-11-10T07:20:00.000Z",
-   "end": "2026-11-10T07:30:00.000Z",
-   "allDay": false
   },
   {
    "who": "",
@@ -79,6 +71,22 @@
    "location": "",
    "start": "2026-11-15T12:00:00.000Z",
    "end": "2026-11-15T14:35:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Föräldramöte - HIF P16-22",
+   "location": "",
+   "start": "2026-11-15T19:30:00.000Z",
+   "end": "2026-11-15T20:30:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Föräldramöte HIF 2026 lag 22",
+   "location": "",
+   "start": "2026-11-15T19:30:00.000Z",
+   "end": "2026-11-15T20:15:00.000Z",
    "allDay": false
   },
   {
