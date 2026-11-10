@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T21:42:04.769Z",
+ "updated": "2026-11-10T03:48:48.988Z",
  "events": [
   {
    "who": "Otis",
@@ -13,6 +13,13 @@
    "title": "Arsenal – Dortmund",
    "sub": "Champions League",
    "start": "2026-11-24T20:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "Barça – Man City",
+   "sub": "Champions League",
+   "start": "2026-12-08T20:00:00.000Z",
    "allDay": false
   }
  ]

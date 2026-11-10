@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T21:41:59.106Z",
+ "updated": "2026-11-10T03:48:43.345Z",
  "events": [
   {
    "who": "Melker",
@@ -51,14 +51,6 @@
   },
   {
    "who": "Melker",
-   "title": "Match: Enebyberg IF - Hammarby IF Fotbollförening",
-   "location": "Enebybergs IP ",
-   "start": "2026-11-14T10:00:00.000Z",
-   "end": "2026-11-14T11:15:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "Melker",
    "title": "Match: Mälarhöjden FF - Hammarby IF Fotbollförening",
    "location": " Hägerstensåsens bollplan",
    "start": "2026-11-15T09:30:00.000Z",
@@ -71,6 +63,14 @@
    "location": "Skogåshallen",
    "start": "2026-11-15T11:45:00.000Z",
    "end": "2026-11-15T12:45:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "Träning - Högalids IF P13 IB",
+   "location": "Liljeholmshallen 1 (Hall 1)",
+   "start": "2026-11-16T17:00:00.000Z",
+   "end": "2026-11-16T18:00:00.000Z",
    "allDay": false
   }
  ]
