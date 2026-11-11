@@ -1,22 +1,6 @@
 {
- "updated": "2026-11-11T11:20:33.219Z",
+ "updated": "2026-11-11T18:48:24.175Z",
  "events": [
-  {
-   "who": "Otis",
-   "title": "Träning - Högalids IF P13 IB",
-   "location": "Tellusborgshallen (Hall 2)",
-   "start": "2026-11-11T17:00:00.000Z",
-   "end": "2026-11-11T18:30:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "Melker",
-   "title": "Träning - Hammarby IF FF P2016-22",
-   "location": "Bäckahagen Skola (gymnastiksal 1, vänster)",
-   "start": "2026-11-11T17:30:00.000Z",
-   "end": "2026-11-11T18:30:00.000Z",
-   "allDay": false
-  },
   {
    "who": "Melker",
    "title": "Träning Utomhus - Hammarby IF FF P2016-22",
