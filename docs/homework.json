@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T03:29:26.808Z",
+ "updated": "2026-11-11T11:20:34.786Z",
  "events": [
   {
    "who": "Otis",
@@ -8,6 +8,15 @@
    "description": "Hi, For today I want you to be able to listen to and understand the story Lemonade and learn the words to the text. You can listen to the text here and you find the vocabulary list in the attached pdf. Best, Karina",
    "start": "2026-11-12T11:55:00.000Z",
    "end": "2026-11-12T12:50:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Melker",
+   "title": "Lämna in Skogens Sytrar",
+   "location": "",
+   "description": "Eftersom boken ska vara utläst denna vecka ska den lämnas in.",
+   "start": "2026-11-13T07:00:00.000Z",
+   "end": "2026-11-13T07:15:00.000Z",
    "allDay": false
   },
   {
