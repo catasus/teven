@@ -1,22 +1,6 @@
 {
- "updated": "2026-11-11T18:48:18.316Z",
+ "updated": "2026-11-12T01:07:57.943Z",
  "events": [
-  {
-   "who": "",
-   "title": "Hector Finland med jobbet",
-   "location": "",
-   "start": "2026-11-10",
-   "end": "2026-11-12",
-   "allDay": true
-  },
-  {
-   "who": "",
-   "title": "Hectors flyg landar",
-   "location": "",
-   "start": "2026-11-11T21:20:00.000Z",
-   "end": "2026-11-11T21:25:00.000Z",
-   "allDay": false
-  },
   {
    "who": "",
    "title": "HITWOD. - SLUSSEN",
@@ -67,18 +51,18 @@
   },
   {
    "who": "",
-   "title": "Föräldramöte - HIF P16-22",
-   "location": "",
-   "start": "2026-11-15T19:30:00.000Z",
-   "end": "2026-11-15T20:30:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "",
    "title": "Föräldramöte HIF 2026 lag 22",
    "location": "",
    "start": "2026-11-15T19:30:00.000Z",
    "end": "2026-11-15T20:15:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Föräldramöte - HIF P16-22",
+   "location": "",
+   "start": "2026-11-15T19:30:00.000Z",
+   "end": "2026-11-15T20:30:00.000Z",
    "allDay": false
   },
   {
@@ -135,6 +119,14 @@
    "location": "",
    "start": "2026-11-24T19:00:00.000Z",
    "end": "2026-11-24T20:45:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Hector jobbmiddag avtackning för kollega ",
+   "location": "",
+   "start": "2026-11-25T16:15:00.000Z",
+   "end": "2026-11-25T19:45:00.000Z",
    "allDay": false
   }
  ]

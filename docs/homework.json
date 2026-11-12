@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T18:48:26.069Z",
+ "updated": "2026-11-12T01:08:04.894Z",
  "events": [
   {
    "who": "Otis",
@@ -36,6 +36,22 @@
    "start": "2026-11-18T12:45:00.000Z",
    "end": "2026-11-18T13:45:00.000Z",
    "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "Prov 2 i spanska åk 7",
+   "location": "",
+   "start": "2026-11-25T23:00:00.000Z",
+   "end": "2026-11-26T22:59:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "Prov i språk 7(tyska, spanska, franska)",
+   "location": "",
+   "start": "2026-11-26",
+   "end": "2026-11-27",
+   "allDay": true
   }
  ]
 }

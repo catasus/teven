@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T18:48:24.175Z",
+ "updated": "2026-11-12T01:08:02.881Z",
  "events": [
   {
    "who": "Melker",
@@ -55,6 +55,22 @@
    "location": "Gubbängens BP ",
    "start": "2026-11-17T17:00:00.000Z",
    "end": "2026-11-17T18:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "Träning - Högalids IF P13 IB",
+   "location": "Tellusborgshallen (Hall 2)",
+   "start": "2026-11-18T17:00:00.000Z",
+   "end": "2026-11-18T18:30:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Melker",
+   "title": "Träning - Hammarby IF FF P2016-22",
+   "location": "Bäckahagen Skola (gymnastiksal 1, vänster)",
+   "start": "2026-11-18T17:30:00.000Z",
+   "end": "2026-11-18T18:30:00.000Z",
    "allDay": false
   }
  ]
