@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T01:08:04.894Z",
+ "updated": "2026-11-12T08:14:53.237Z",
  "events": [
   {
    "who": "Otis",
@@ -35,6 +35,15 @@
    "description": "Inre- och yttre krafter, sidorna 49-60, 62, 68-83.",
    "start": "2026-11-18T12:45:00.000Z",
    "end": "2026-11-18T13:45:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Melker",
+   "title": "4B: NO-Läxa: Naturen på hösten",
+   "location": "",
+   "description": "Se bifogat instuderingsstöd. Lär dig begrepp och vad de betyder. Du kan vika undan förklaringen(betydelsen) och bildstödet för att förhöra dig själv om du kan förklara begreppsordet. Lycka till!",
+   "start": "2026-11-19T07:10:00.000Z",
+   "end": "2026-11-19T07:50:00.000Z",
    "allDay": false
   },
   {
