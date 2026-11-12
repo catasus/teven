@@ -1,15 +1,6 @@
 {
- "updated": "2026-11-12T08:14:53.237Z",
+ "updated": "2026-11-12T16:49:02.355Z",
  "events": [
-  {
-   "who": "Otis",
-   "title": "English: Homework",
-   "location": "",
-   "description": "Hi, For today I want you to be able to listen to and understand the story Lemonade and learn the words to the text. You can listen to the text here and you find the vocabulary list in the attached pdf. Best, Karina",
-   "start": "2026-11-12T11:55:00.000Z",
-   "end": "2026-11-12T12:50:00.000Z",
-   "allDay": false
-  },
   {
    "who": "Melker",
    "title": "Lämna in Skogens Sytrar",
@@ -44,6 +35,15 @@
    "description": "Se bifogat instuderingsstöd. Lär dig begrepp och vad de betyder. Du kan vika undan förklaringen(betydelsen) och bildstödet för att förhöra dig själv om du kan förklara begreppsordet. Lycka till!",
    "start": "2026-11-19T07:10:00.000Z",
    "end": "2026-11-19T07:50:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "English: Homework",
+   "location": "",
+   "description": "Hi, For today I want you to learn the verbs in the attached pdf. Best, Karina",
+   "start": "2026-11-19T11:55:00.000Z",
+   "end": "2026-11-19T12:50:00.000Z",
    "allDay": false
   },
   {
