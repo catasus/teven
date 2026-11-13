@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T10:13:26.047Z",
+ "updated": "2026-11-13T17:44:07.622Z",
  "events": [
   {
    "who": "",
@@ -43,18 +43,18 @@
   },
   {
    "who": "",
-   "title": "Föräldramöte HIF 2026 lag 22",
-   "location": "",
-   "start": "2026-11-15T19:30:00.000Z",
-   "end": "2026-11-15T20:15:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "",
    "title": "Föräldramöte - HIF P16-22",
    "location": "",
    "start": "2026-11-15T19:30:00.000Z",
    "end": "2026-11-15T20:30:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Föräldramöte HIF 2026 lag 22",
+   "location": "",
+   "start": "2026-11-15T19:30:00.000Z",
+   "end": "2026-11-15T20:15:00.000Z",
    "allDay": false
   },
   {
