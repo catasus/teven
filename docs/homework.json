@@ -1,24 +1,6 @@
 {
- "updated": "2026-11-13T02:48:05.595Z",
+ "updated": "2026-11-13T10:13:32.872Z",
  "events": [
-  {
-   "who": "Melker",
-   "title": "Lämna in Skogens Sytrar",
-   "location": "",
-   "description": "Eftersom boken ska vara utläst denna vecka ska den lämnas in.",
-   "start": "2026-11-13T07:00:00.000Z",
-   "end": "2026-11-13T07:15:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "Otis",
-   "title": "Matematikprov Geometri, kapitel 2",
-   "location": "",
-   "description": "Information finns på Teams matematik.",
-   "start": "2026-11-13T07:10:00.000Z",
-   "end": "2026-11-13T08:10:00.000Z",
-   "allDay": false
-  },
   {
    "who": "Otis",
    "title": "7A prov geografi",
