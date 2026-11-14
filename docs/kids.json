@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T09:35:41.407Z",
+ "updated": "2026-11-14T16:05:52.079Z",
  "events": [
   {
    "who": "Otis",
@@ -7,14 +7,6 @@
    "location": "Liljeholmshallarna",
    "start": "2026-11-14T07:00:00.000Z",
    "end": "2026-11-15T17:00:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "Otis",
-   "title": "Match IFK Haninge - Högalids IF",
-   "location": "Lyckeby Sporthall",
-   "start": "2026-11-14T09:15:00.000Z",
-   "end": "2026-11-14T10:15:00.000Z",
    "allDay": false
   },
   {
