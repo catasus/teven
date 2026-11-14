@@ -1,14 +1,6 @@
 {
- "updated": "2026-11-14T16:05:46.832Z",
+ "updated": "2026-11-14T20:40:24.272Z",
  "events": [
-  {
-   "who": "",
-   "title": "Musikal med mamma",
-   "location": "",
-   "start": "2026-11-14T12:00:00.000Z",
-   "end": "2026-11-14T17:00:00.000Z",
-   "allDay": false
-  },
   {
    "who": "",
    "title": "Hector ev. 40 årsfest ",
@@ -27,18 +19,18 @@
   },
   {
    "who": "",
-   "title": "Föräldramöte HIF 2026 lag 22",
-   "location": "",
-   "start": "2026-11-15T19:30:00.000Z",
-   "end": "2026-11-15T20:15:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "",
    "title": "Föräldramöte - HIF P16-22",
    "location": "",
    "start": "2026-11-15T19:30:00.000Z",
    "end": "2026-11-15T20:30:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Föräldramöte HIF 2026 lag 22",
+   "location": "",
+   "start": "2026-11-15T19:30:00.000Z",
+   "end": "2026-11-15T20:15:00.000Z",
    "allDay": false
   },
   {
