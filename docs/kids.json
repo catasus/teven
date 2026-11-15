@@ -1,14 +1,6 @@
 {
- "updated": "2026-11-15T14:24:35.539Z",
+ "updated": "2026-11-15T19:52:26.398Z",
  "events": [
-  {
-   "who": "Otis",
-   "title": "Café Högan",
-   "location": "Liljeholmshallarna",
-   "start": "2026-11-14T07:00:00.000Z",
-   "end": "2026-11-15T17:00:00.000Z",
-   "allDay": false
-  },
   {
    "who": "Melker",
    "title": "Föräldramöte - Hammarby IF FF P2016-22",
@@ -62,7 +54,7 @@
    "title": "Match: Brommapojkarna p16-4 - Hammarby IF Fotbollförening",
    "location": "Nälsta BP",
    "start": "2026-11-21T15:00:00.000Z",
-   "end": "2026-11-21T16:00:00.000Z",
+   "end": "2026-11-21T16:30:00.000Z",
    "allDay": false
   },
   {
