@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T23:37:54.351Z",
+ "updated": "2026-11-16T03:05:33.889Z",
  "events": [
   {
    "who": "Otis",
@@ -55,6 +55,30 @@
    "location": "Stora mossen IP",
    "start": "2026-11-21T15:00:00.000Z",
    "end": "2026-11-21T16:30:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "Match Högalids IF - Karlbergs BK",
+   "location": "Tellusborgshallen 1",
+   "start": "2026-11-22T09:30:00.000Z",
+   "end": "2026-11-22T10:30:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "Match Högalids IF - Hammarby IF IBF",
+   "location": "Tellusborgshallen 1",
+   "start": "2026-11-22T12:00:00.000Z",
+   "end": "2026-11-22T13:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Melker",
+   "title": "Match: Sköndal - Hammarby IF Fotbollförening",
+   "location": "Sandåkra BP",
+   "start": "2026-11-22T12:00:00.000Z",
+   "end": "2026-11-22T13:30:00.000Z",
    "allDay": false
   }
  ]
