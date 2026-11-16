@@ -1,14 +1,6 @@
 {
- "updated": "2026-11-16T11:03:35.345Z",
+ "updated": "2026-11-16T20:58:14.115Z",
  "events": [
-  {
-   "who": "",
-   "title": "SHRED. - SLUSSEN",
-   "location": "SLUSSEN",
-   "start": "2026-11-16T17:30:00.000Z",
-   "end": "2026-11-16T18:15:00.000Z",
-   "allDay": false
-  },
   {
    "who": "",
    "title": "Hector till Nederländerna ",
@@ -40,6 +32,14 @@
    "start": "2026-11-23",
    "end": "2026-11-24",
    "allDay": true
+  },
+  {
+   "who": "",
+   "title": "Möte med Alice Hull",
+   "location": "",
+   "start": "2026-11-23T14:30:00.000Z",
+   "end": "2026-11-23T15:30:00.000Z",
+   "allDay": false
   },
   {
    "who": "",
