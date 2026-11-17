@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T20:58:18.953Z",
+ "updated": "2026-11-17T03:22:59.529Z",
  "events": [
   {
    "who": "Melker",
@@ -34,14 +34,6 @@
    "allDay": false
   },
   {
-   "who": "Melker",
-   "title": "Match: Brommapojkarna P16-10 - Hammarby IF Fotbollförening",
-   "location": "Stora mossen IP",
-   "start": "2026-11-21T15:00:00.000Z",
-   "end": "2026-11-21T16:30:00.000Z",
-   "allDay": false
-  },
-  {
    "who": "Otis",
    "title": "Match Högalids IF - Karlbergs BK",
    "location": "Tellusborgshallen 1",
@@ -63,6 +55,14 @@
    "location": "Sandåkra BP",
    "start": "2026-11-22T12:00:00.000Z",
    "end": "2026-11-22T13:30:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "Träning - Högalids IF P13 IB",
+   "location": "Liljeholmshallen 1 (Hall 1)",
+   "start": "2026-11-23T17:00:00.000Z",
+   "end": "2026-11-23T18:00:00.000Z",
    "allDay": false
   }
  ]

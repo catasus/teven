@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T20:58:21.057Z",
+ "updated": "2026-11-17T03:23:01.476Z",
  "events": [
   {
    "who": "Otis",
@@ -51,6 +51,24 @@
    "location": "",
    "start": "2026-11-26",
    "end": "2026-11-27",
+   "allDay": true
+  },
+  {
+   "who": "Otis",
+   "title": "APT",
+   "location": "",
+   "description": "APT, fritids stänger kl 1430. kom ihåg att anmäla till fritids.",
+   "start": "2026-12-01",
+   "end": "2026-12-02",
+   "allDay": true
+  },
+  {
+   "who": "Melker",
+   "title": "APT",
+   "location": "",
+   "description": "APT, fritids stänger kl 1430. kom ihåg att anmäla till fritids.",
+   "start": "2026-12-01",
+   "end": "2026-12-02",
    "allDay": true
   }
  ]
