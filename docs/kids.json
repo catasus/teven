@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T20:49:54.192Z",
+ "updated": "2026-11-18T02:38:58.928Z",
  "events": [
   {
    "who": "Melker",
@@ -55,6 +55,14 @@
    "location": "Liljeholmshallen 1 (Hall 1)",
    "start": "2026-11-23T17:00:00.000Z",
    "end": "2026-11-23T18:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Melker",
+   "title": "Träning Utomhus - Hammarby IF FF P2016-22",
+   "location": "Gubbängens BP ",
+   "start": "2026-11-24T17:00:00.000Z",
+   "end": "2026-11-24T18:00:00.000Z",
    "allDay": false
   }
  ]

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T20:49:49.920Z",
+ "updated": "2026-11-18T02:38:53.647Z",
  "events": [
   {
    "who": "",
@@ -23,6 +23,14 @@
    "location": "",
    "start": "2026-11-19T17:00:00.000Z",
    "end": "2026-11-19T17:20:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "DISCOPUMP. - SLUSSEN",
+   "location": "SLUSSEN",
+   "start": "2026-11-21T10:30:00.000Z",
+   "end": "2026-11-21T11:20:00.000Z",
    "allDay": false
   },
   {
@@ -128,6 +136,14 @@
    "start": "2026-12-01",
    "end": "2026-12-03",
    "allDay": true
+  },
+  {
+   "who": "",
+   "title": "Hectors flyg åker",
+   "location": "",
+   "start": "2026-12-01T05:00:00.000Z",
+   "end": "2026-12-01T05:10:00.000Z",
+   "allDay": false
   }
  ]
 }
