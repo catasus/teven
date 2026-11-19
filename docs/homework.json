@@ -1,15 +1,6 @@
 {
- "updated": "2026-11-19T08:43:35.517Z",
+ "updated": "2026-11-19T17:39:12.612Z",
  "events": [
-  {
-   "who": "Otis",
-   "title": "English: Homework",
-   "location": "",
-   "description": "Hi, For today I want you to learn the verbs in the attached pdf. Best, Karina",
-   "start": "2026-11-19T11:55:00.000Z",
-   "end": "2026-11-19T12:50:00.000Z",
-   "allDay": false
-  },
   {
    "who": "Melker",
    "title": "PROV Sveriges naturresurser",
@@ -18,6 +9,15 @@
    "start": "2026-11-23T11:15:00.000Z",
    "end": "2026-11-23T12:00:00.000Z",
    "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "Teaterbesök",
+   "location": "",
+   "description": "Hej, Vi åker till Dramaten för att titta på teateruppsättningen Amnesi. Följande tider gäller lunch 11.45 samling på skolgården 12.10 och promenad till Zinkensdamms T-bana tunnelbanetåg till Östermalmstorg och promenad till Dramaten teaterföreställning 13-14 tillbaka på skolan ca. 14.45 Vänliga hälsningar, Arbetslag åk 7",
+   "start": "2026-11-25",
+   "end": "2026-11-26",
+   "allDay": true
   },
   {
    "who": "Otis",
@@ -34,6 +34,15 @@
    "start": "2026-11-26",
    "end": "2026-11-27",
    "allDay": true
+  },
+  {
+   "who": "Otis",
+   "title": "English 7A: Homework",
+   "location": "",
+   "description": "Hi, For today I want you to learn the following words to the story we listenend to: When mum's gone missing. Here are the words: cottage = stuga influenza = influensa to have a temperature = att ha feber to comb = att kamma to lean over = att luta sig över cheek = kind chin = haka a lorry (BrE) = en lastbil head injuries = huvudskador unconscious = medvetslös ID (identification card) = legitimation / id-kort ill (BrE) / sick (AmE) = sjuk to freak out = få panik neighbor (AmE)/ neighbour (BrE)= granne Best, Karina",
+   "start": "2026-11-26T11:55:00.000Z",
+   "end": "2026-11-26T12:50:00.000Z",
+   "allDay": false
   },
   {
    "who": "Otis",
