@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T23:47:04.534Z",
+ "updated": "2026-11-20T04:39:10.620Z",
  "events": [
   {
    "who": "",
@@ -127,6 +127,14 @@
    "location": "",
    "start": "2026-12-02T22:15:00.000Z",
    "end": "2026-12-02T23:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Tandläkare – Sandra Radecki Bäck",
+   "location": "Drakenbergskliniken",
+   "start": "2026-12-03T10:30:00.000Z",
+   "end": "2026-12-03T11:30:00.000Z",
    "allDay": false
   }
  ]
