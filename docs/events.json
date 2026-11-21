@@ -1,14 +1,6 @@
 {
- "updated": "2026-11-20T21:31:36.618Z",
+ "updated": "2026-11-21T02:49:26.434Z",
  "events": [
-  {
-   "who": "",
-   "title": "Hector till Nederländerna ",
-   "location": "",
-   "start": "2026-11-18",
-   "end": "2026-11-21",
-   "allDay": true
-  },
   {
    "who": "",
    "title": "DISCOPUMP. - SLUSSEN",
@@ -136,6 +128,14 @@
    "start": "2026-12-03T10:30:00.000Z",
    "end": "2026-12-03T11:30:00.000Z",
    "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Farfar Bino har bilen",
+   "location": "",
+   "start": "2026-12-05",
+   "end": "2026-12-07",
+   "allDay": true
   }
  ]
 }
