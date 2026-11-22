@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T22:22:01.254Z",
+ "updated": "2026-11-22T02:24:16.091Z",
  "events": [
   {
    "who": "Otis",
@@ -55,6 +55,22 @@
    "location": "Söderstadion",
    "start": "2026-11-26T17:00:00.000Z",
    "end": "2026-11-26T18:15:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Melker",
+   "title": "Match: Samba  5-aside - Hammarby IF Fotbollförening",
+   "location": "Danderyds fotbollshall",
+   "start": "2026-11-28T08:00:00.000Z",
+   "end": "2026-11-28T12:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Melker",
+   "title": "Match: Djurgården  - Hammarby IF Fotbollförening",
+   "location": "Kristineberg IP",
+   "start": "2026-11-28T13:15:00.000Z",
+   "end": "2026-11-28T14:30:00.000Z",
    "allDay": false
   }
  ]

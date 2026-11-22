@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T22:21:56.629Z",
+ "updated": "2026-11-22T02:24:11.059Z",
  "events": [
   {
    "who": "",
@@ -136,6 +136,30 @@
    "start": "2026-12-05",
    "end": "2026-12-07",
    "allDay": true
+  },
+  {
+   "who": "",
+   "title": "Hector röntgen SÖS (njurröntgen)",
+   "location": "",
+   "start": "2026-12-05T06:45:00.000Z",
+   "end": "2026-12-05T07:30:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Konsert Mind enterprises Fållan - ",
+   "location": "",
+   "start": "2026-12-05T15:49:00.000Z",
+   "end": "2026-12-05T22:10:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Otis och Melker hos Farmor och farfar",
+   "location": "",
+   "start": "2026-12-05T16:00:00.000Z",
+   "end": "2026-12-05T18:30:00.000Z",
+   "allDay": false
   }
  ]
 }
