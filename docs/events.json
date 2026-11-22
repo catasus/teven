@@ -1,22 +1,6 @@
 {
- "updated": "2026-11-22T09:58:12.004Z",
+ "updated": "2026-11-22T17:35:19.556Z",
  "events": [
-  {
-   "who": "",
-   "title": "Otis: Match Högalids IF – Karlbergs BK",
-   "location": "Tellusborgshallen 1",
-   "start": "2026-11-22T08:45:00.000Z",
-   "end": "2026-11-22T10:30:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "",
-   "title": "Melker: Match Sköndal – Hammarby (P2016-22)",
-   "location": "Sandåkra BP",
-   "start": "2026-11-22T11:30:00.000Z",
-   "end": "2026-11-22T13:30:00.000Z",
-   "allDay": false
-  },
   {
    "who": "",
    "title": "Farfar Bino har bilen",
@@ -31,14 +15,6 @@
    "location": "",
    "start": "2026-11-23T14:30:00.000Z",
    "end": "2026-11-23T15:30:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "",
-   "title": "HITWOD. - SLUSSEN",
-   "location": "SLUSSEN",
-   "start": "2026-11-23T16:30:00.000Z",
-   "end": "2026-11-23T17:15:00.000Z",
    "allDay": false
   },
   {
