@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T03:19:07.289Z",
+ "updated": "2026-11-23T13:19:53.131Z",
  "events": [
   {
    "who": "",
@@ -8,14 +8,6 @@
    "start": "2026-11-23",
    "end": "2026-11-24",
    "allDay": true
-  },
-  {
-   "who": "",
-   "title": "Möte med Alice Hull",
-   "location": "",
-   "start": "2026-11-23T14:30:00.000Z",
-   "end": "2026-11-23T15:30:00.000Z",
-   "allDay": false
   },
   {
    "who": "",
@@ -67,6 +59,14 @@
   },
   {
    "who": "",
+   "title": "Lunch med Jossan&Pernilla",
+   "location": "",
+   "start": "2026-11-28T11:00:00.000Z",
+   "end": "2026-11-28T13:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
    "title": "Inflyttningsfest hos Axel och Malin",
    "location": "Elsa Beskows gata 21, Fruängen",
    "start": "2026-11-28T14:00:00.000Z",
@@ -87,6 +87,14 @@
    "location": "",
    "start": "2026-11-28T17:50:00.000Z",
    "end": "2026-11-28T22:30:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Möte med Alice Hull",
+   "location": "",
+   "start": "2026-11-30T14:30:00.000Z",
+   "end": "2026-11-30T15:30:00.000Z",
    "allDay": false
   },
   {
