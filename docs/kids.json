@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T17:35:24.095Z",
+ "updated": "2026-11-23T03:19:12.666Z",
  "events": [
   {
    "who": "Otis",
@@ -53,8 +53,16 @@
    "who": "Melker",
    "title": "Match: Djurgården  - Hammarby IF Fotbollförening",
    "location": "Kristineberg IP",
-   "start": "2026-11-28T13:15:00.000Z",
-   "end": "2026-11-28T14:30:00.000Z",
+   "start": "2026-11-28T11:00:00.000Z",
+   "end": "2026-11-28T12:30:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "Match Högalids IF - Täby FC (B)",
+   "location": "Tellusborgshallen 1",
+   "start": "2026-11-29T14:15:00.000Z",
+   "end": "2026-11-29T16:15:00.000Z",
    "allDay": false
   }
  ]
