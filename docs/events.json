@@ -1,22 +1,6 @@
 {
- "updated": "2026-11-24T10:51:57.641Z",
+ "updated": "2026-11-24T20:54:58.688Z",
  "events": [
-  {
-   "who": "",
-   "title": "Otis & Keps gymma",
-   "location": "",
-   "start": "2026-11-24T17:00:00.000Z",
-   "end": "2026-11-24T18:00:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "",
-   "title": "Hector badmin",
-   "location": "",
-   "start": "2026-11-24T19:00:00.000Z",
-   "end": "2026-11-24T20:45:00.000Z",
-   "allDay": false
-  },
   {
    "who": "",
    "title": "Lunch med John",
@@ -43,6 +27,14 @@
   },
   {
    "who": "",
+   "title": "Melker – cup",
+   "location": "",
+   "start": "2026-11-28T08:00:00.000Z",
+   "end": "2026-11-28T12:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
    "title": "Lunch med Jossan&Pernilla",
    "location": "",
    "start": "2026-11-28T11:00:00.000Z",
@@ -59,18 +51,10 @@
   },
   {
    "who": "",
-   "title": "Middag med Howie, Awed + vintanterna",
-   "location": "",
-   "start": "2026-11-28T17:00:00.000Z",
-   "end": "2026-11-28T20:45:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "",
-   "title": "Axel och Malin inflyttningsfest",
-   "location": "",
-   "start": "2026-11-28T17:50:00.000Z",
-   "end": "2026-11-28T22:30:00.000Z",
+   "title": "Bord med vingummorna",
+   "location": "Brasserie Astrid",
+   "start": "2026-11-28T18:30:00.000Z",
+   "end": "2026-11-28T21:00:00.000Z",
    "allDay": false
   },
   {
