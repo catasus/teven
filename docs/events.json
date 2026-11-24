@@ -1,22 +1,6 @@
 {
- "updated": "2026-11-23T13:19:53.131Z",
+ "updated": "2026-11-24T01:03:34.074Z",
  "events": [
-  {
-   "who": "",
-   "title": "Farfar Bino har bilen",
-   "location": "",
-   "start": "2026-11-23",
-   "end": "2026-11-24",
-   "allDay": true
-  },
-  {
-   "who": "",
-   "title": "Bajenmatch",
-   "location": "",
-   "start": "2026-11-23T18:00:00.000Z",
-   "end": "2026-11-23T20:00:00.000Z",
-   "allDay": false
-  },
   {
    "who": "",
    "title": "Otis & Keps gymma",
@@ -87,6 +71,14 @@
    "location": "",
    "start": "2026-11-28T17:50:00.000Z",
    "end": "2026-11-28T22:30:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Hammarby guld?",
+   "location": "",
+   "start": "2026-11-29T10:30:00.000Z",
+   "end": "2026-11-29T18:20:00.000Z",
    "allDay": false
   },
   {

@@ -1,14 +1,6 @@
 {
- "updated": "2026-11-23T13:19:57.596Z",
+ "updated": "2026-11-24T01:03:39.589Z",
  "events": [
-  {
-   "who": "Otis",
-   "title": "Träning - Högalids IF P13 IB",
-   "location": "Liljeholmshallen 1 (Hall 1)",
-   "start": "2026-11-23T17:00:00.000Z",
-   "end": "2026-11-23T18:00:00.000Z",
-   "allDay": false
-  },
   {
    "who": "Melker",
    "title": "Träning Utomhus - Hammarby IF FF P2016-22",
@@ -50,19 +42,19 @@
    "allDay": false
   },
   {
-   "who": "Melker",
-   "title": "Match: Djurgården  - Hammarby IF Fotbollförening",
-   "location": "Hjorthagens IP",
-   "start": "2026-11-28T11:00:00.000Z",
-   "end": "2026-11-28T12:30:00.000Z",
-   "allDay": false
-  },
-  {
    "who": "Otis",
    "title": "Match Högalids IF - Täby FC (B)",
    "location": "Tellusborgshallen 1",
    "start": "2026-11-29T14:15:00.000Z",
    "end": "2026-11-29T16:15:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "Träning - Högalids IF P13 IB",
+   "location": "Liljeholmshallen 1 (Hall 1)",
+   "start": "2026-11-30T17:00:00.000Z",
+   "end": "2026-11-30T18:00:00.000Z",
    "allDay": false
   }
  ]
