@@ -1,14 +1,6 @@
 {
- "updated": "2026-11-25T03:51:12.992Z",
+ "updated": "2026-11-25T13:41:15.096Z",
  "events": [
-  {
-   "who": "",
-   "title": "Lunch med John",
-   "location": "",
-   "start": "2026-11-25T10:00:00.000Z",
-   "end": "2026-11-25T12:45:00.000Z",
-   "allDay": false
-  },
   {
    "who": "",
    "title": "Hector jobbmiddag avtackning för kollega ",
@@ -37,8 +29,8 @@
    "who": "",
    "title": "Lunch med Jossan&Pernilla",
    "location": "",
-   "start": "2026-11-28T11:00:00.000Z",
-   "end": "2026-11-28T13:00:00.000Z",
+   "start": "2026-11-28T12:00:00.000Z",
+   "end": "2026-11-28T14:00:00.000Z",
    "allDay": false
   },
   {
