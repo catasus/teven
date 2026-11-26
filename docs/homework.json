@@ -1,15 +1,6 @@
 {
- "updated": "2026-11-25T22:44:53.858Z",
+ "updated": "2026-11-26T04:25:38.573Z",
  "events": [
-  {
-   "who": "Otis",
-   "title": "Teaterbesök",
-   "location": "",
-   "description": "Hej, Vi åker till Dramaten för att titta på teateruppsättningen Amnesi. Följande tider gäller lunch 11.45 samling på skolgården 12.10 och promenad till Zinkensdamms T-bana tunnelbanetåg till Östermalmstorg och promenad till Dramaten teaterföreställning 13-14 tillbaka på skolan ca. 14.45 Vänliga hälsningar, Arbetslag åk 7",
-   "start": "2026-11-25",
-   "end": "2026-11-26",
-   "allDay": true
-  },
   {
    "who": "Otis",
    "title": "Prov 2 i spanska åk 7",
@@ -42,6 +33,14 @@
    "description": "Det här är ett mindre prov om miljöbiologi och gäller kap 5.5, 9.1, 9.2, 9.3, 9.7 i Spektrum Biologi.",
    "start": "2026-12-04T08:15:00.000Z",
    "end": "2026-12-04T09:15:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Otis",
+   "title": "7A prov Historia",
+   "location": "",
+   "start": "2026-12-09T12:45:00.000Z",
+   "end": "2026-12-09T13:45:00.000Z",
    "allDay": false
   }
  ]
