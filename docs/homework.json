@@ -1,22 +1,6 @@
 {
- "updated": "2026-11-26T22:57:08.581Z",
+ "updated": "2026-11-27T04:42:25.310Z",
  "events": [
-  {
-   "who": "Otis",
-   "title": "Prov 2 i spanska åk 7",
-   "location": "",
-   "start": "2026-11-25T23:00:00.000Z",
-   "end": "2026-11-26T22:59:00.000Z",
-   "allDay": false
-  },
-  {
-   "who": "Otis",
-   "title": "Prov i språk 7(tyska, spanska, franska)",
-   "location": "",
-   "start": "2026-11-26",
-   "end": "2026-11-27",
-   "allDay": true
-  },
   {
    "who": "Otis",
    "title": "Läxa spanska Åses grupp",
@@ -41,6 +25,15 @@
    "location": "",
    "start": "2026-12-09T12:45:00.000Z",
    "end": "2026-12-09T13:45:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Melker",
+   "title": "4B: NO(FY) Prov på Kapitel 3. Värme, kyla och väder",
+   "location": "",
+   "description": "Vänligen se bifogat instuderingsstöd. Tips när du studerar:  Läs sidorna i Grundboken samt Aktivitetsboken (svaren) s.24-25.  Träna på att förklara med egna ord.  Titta på bilder och modeller i Grundboken. Lycka till! Bonita",
+   "start": "2026-12-10T07:10:00.000Z",
+   "end": "2026-12-10T07:50:00.000Z",
    "allDay": false
   }
  ]

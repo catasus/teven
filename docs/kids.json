@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T22:57:06.879Z",
+ "updated": "2026-11-27T04:42:23.510Z",
  "events": [
   {
    "who": "Otis",
@@ -55,6 +55,14 @@
    "location": "Tellusborgshallen (Hall 2)",
    "start": "2026-12-02T18:30:00.000Z",
    "end": "2026-12-02T20:00:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "Melker",
+   "title": "Träning Utomhus - Hammarby IF FF P2016-22",
+   "location": "Söderstadion",
+   "start": "2026-12-03T17:00:00.000Z",
+   "end": "2026-12-03T18:15:00.000Z",
    "allDay": false
   }
  ]

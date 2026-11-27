@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T22:57:02.248Z",
+ "updated": "2026-11-27T04:42:18.468Z",
  "events": [
   {
    "who": "",
@@ -119,6 +119,14 @@
    "location": "",
    "start": "2026-12-08T19:00:00.000Z",
    "end": "2026-12-08T20:45:00.000Z",
+   "allDay": false
+  },
+  {
+   "who": "",
+   "title": "Julfest med AcadeMedia ",
+   "location": "",
+   "start": "2026-12-10T16:30:00.000Z",
+   "end": "2026-12-10T20:00:00.000Z",
    "allDay": false
   }
  ]
